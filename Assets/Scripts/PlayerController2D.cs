@@ -5,11 +5,14 @@ using UnityEngine;
 public class PlayerController2D : MonoBehaviour
 {
 
-     public Animator animator;
+    public Animator animator;
     public Rigidbody2D rb2d;
     SpriteRenderer spriteRenderer;
     [SerializeField]
     private float runspeed = 1.5f;
+
+    public Transform firePoint;
+    public GameObject bullet;
 
     [SerializeField]    private float jumpspeed = 4f;
     bool isGrounded;
@@ -48,12 +51,12 @@ public class PlayerController2D : MonoBehaviour
         if (Input.GetKey("d") || Input.GetKey("right")) {
             rb2d.velocity = new Vector2(runspeed,rb2d.velocity.y);
             if (isGrounded) animator.Play("player_run");
-            spriteRenderer.flipX = false;
+            transform.eulerAngles = new Vector2(0,0);
         }
         else if (Input.GetKey("a") || Input.GetKey("left")) {
             rb2d.velocity = new Vector2(-runspeed,rb2d.velocity.y);
             if (isGrounded) animator.Play("player_run");
-            spriteRenderer.flipX = true;
+            transform.eulerAngles = new Vector2(0,180);
         }
         else {
             if (isGrounded) animator.Play("player_idle");
@@ -62,6 +65,9 @@ public class PlayerController2D : MonoBehaviour
         if (Input.GetKey("space") && isGrounded || Input.GetKey("x")  && isGrounded) {
             rb2d.velocity = new Vector2(rb2d.velocity.x, jumpspeed);
             animator.Play("player_jump");
+        }
+        if (Input.GetKeyDown("z")){
+            Instantiate(bullet, firePoint.position, firePoint.rotation);
         }
     }
 }
