@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5670946796144068907}
   - component: {fileID: 4207042370307382526}
   - component: {fileID: 6076823121763702434}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,3 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  player: {fileID: 0}
+  enemyDeathEffect: {fileID: 5598331778370054590, guid: aa315551554c8d940bd76d6501394b25,
+    type: 3}
+  impactParticle: {fileID: 2008255138228991699, guid: 139b670a355cd574aba72c152c2e2b48,
+    type: 3}

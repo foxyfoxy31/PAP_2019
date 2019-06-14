@@ -10,7 +10,7 @@ public class PlayerController2D : MonoBehaviour
     SpriteRenderer spriteRenderer;
     [SerializeField]
     private float runspeed = 1.5f;
-
+    private int fireframe = 0;
     public Transform firePoint;
     public GameObject bullet;
 
@@ -37,6 +37,7 @@ public class PlayerController2D : MonoBehaviour
 
     private void FixedUpdate() {
 
+
         if (Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground")) || 
         Physics2D.Linecast(transform.position, groundCheckL.position, 1 << LayerMask.NameToLayer("Ground")) || 
         Physics2D.Linecast(transform.position, groundCheckR.position, 1 << LayerMask.NameToLayer("Ground")))
@@ -45,9 +46,33 @@ public class PlayerController2D : MonoBehaviour
         }
         else {
             isGrounded = false;
-            animator.Play("player_jump");
+            if (fireframe != 0) animator.Play("player_jumpfire");
+            else animator.Play("player_jump");
         }
 
+        if (fireframe != 0) {
+                 if (Input.GetKey("d") || Input.GetKey("right")) {
+                        rb2d.velocity = new Vector2(runspeed,rb2d.velocity.y);
+                        if (isGrounded) animator.Play("player_runfire");
+                        transform.eulerAngles = new Vector2(0,0);
+                    }
+                    else if (Input.GetKey("a") || Input.GetKey("left")) {
+                        rb2d.velocity = new Vector2(-runspeed,rb2d.velocity.y);
+                        if (isGrounded) animator.Play("player_runfire");
+                        transform.eulerAngles = new Vector2(0,180);
+                    }
+                    else {
+                        if (isGrounded) animator.Play("player_fire");
+                        rb2d.velocity = new Vector2(0,rb2d.velocity.y);
+                    }
+                    if (Input.GetKey("space") && isGrounded || Input.GetKey("x")  && isGrounded) {
+                        rb2d.velocity = new Vector2(rb2d.velocity.x, jumpspeed);
+                        animator.Play("player_jumpfire");
+                    }
+                    fireframe--;
+                    Debug.Log(fireframe);
+        }
+        else {
         if (Input.GetKey("d") || Input.GetKey("right")) {
             rb2d.velocity = new Vector2(runspeed,rb2d.velocity.y);
             if (isGrounded) animator.Play("player_run");
@@ -67,7 +92,9 @@ public class PlayerController2D : MonoBehaviour
             animator.Play("player_jump");
         }
         if (Input.GetKeyDown("z")){
+            fireframe = 15;
             Instantiate(bullet, firePoint.position, firePoint.rotation);
+        }
         }
     }
 }
