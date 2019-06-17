@@ -13,6 +13,8 @@ public class bulletcontroller : MonoBehaviour
 
     public GameObject impactParticle;
 
+    public int damageToGive;
+
     // Start is called before the first frame update
     void Start(){
         player = FindObjectOfType<PlayerController2D>();
@@ -28,8 +30,10 @@ public class bulletcontroller : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other){
         if (other.tag == "Enemy"){
-            Instantiate(enemyDeathEffect, other.transform.position, other.transform.rotation);
-            Destroy(other.gameObject);
+            //Instantiate(enemyDeathEffect, other.transform.position, other.transform.rotation);
+            //Destroy(other.gameObject);
+
+            other.GetComponent<EnemyHealthManager>().giveDamage(damageToGive);
         }
         Instantiate(impactParticle, transform.position, transform.rotation);
         Destroy(gameObject);

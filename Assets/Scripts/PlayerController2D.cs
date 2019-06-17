@@ -70,7 +70,6 @@ public class PlayerController2D : MonoBehaviour
                         animator.Play("player_jumpfire");
                     }
                     fireframe--;
-                    Debug.Log(fireframe);
         }
         else {
         if (Input.GetKey("d") || Input.GetKey("right")) {
@@ -92,7 +91,7 @@ public class PlayerController2D : MonoBehaviour
             animator.Play("player_jump");
         }
         if (Input.GetKeyDown("z")){
-            fireframe = 15;
+            fireframe = 10;
             Instantiate(bullet, firePoint.position, firePoint.rotation);
         }
         }
