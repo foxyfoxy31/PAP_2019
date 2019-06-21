@@ -1712,6 +1712,7 @@ GameObject:
   - component: {fileID: 1822393385}
   - component: {fileID: 1822393387}
   - component: {fileID: 1822393386}
+  - component: {fileID: 1822393388}
   m_Layer: 5
   m_Name: HealthCounter
   m_TagString: Untagged
@@ -1780,6 +1781,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1822393384}
   m_CullTransparentMesh: 0
+--- !u!114 &1822393388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822393384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07ed98e78923e454ebf7bc7567827f6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxPlayerHealth: 5
+  isDead: 0
 --- !u!1 &1888793410
 GameObject:
   m_ObjectHideFlags: 0
@@ -1830,6 +1845,7 @@ MonoBehaviour:
     type: 3}
   respawnDelay: 3
   rend: {fileID: 0}
+  healthManager: {fileID: 0}
 --- !u!1 &1913128173
 GameObject:
   m_ObjectHideFlags: 0
@@ -2078,6 +2094,63 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2044124270}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2061372530
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2061372531}
+  - component: {fileID: 2061372532}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2061372531
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061372530}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2118029113}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &2061372532
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061372530}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.12}
+    newSize: {x: 0.16, y: 0.12}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.16, y: 0.12}
+  m_EdgeRadius: 0
 --- !u!1 &2065105163
 GameObject:
   m_ObjectHideFlags: 0
@@ -2119,12 +2192,11 @@ GameObject:
   - component: {fileID: 2118029113}
   - component: {fileID: 2118029112}
   - component: {fileID: 2118029111}
-  - component: {fileID: 2118029110}
-  - component: {fileID: 2118029109}
   - component: {fileID: 2118029114}
   - component: {fileID: 2118029115}
   - component: {fileID: 2118029116}
   - component: {fileID: 2118029117}
+  - component: {fileID: 2118029109}
   m_Layer: 0
   m_Name: enemy1
   m_TagString: Enemy
@@ -2141,36 +2213,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2118029108}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 250aa45acadfa0b42a6d02a89b9cb3de, type: 3}
+  m_Script: {fileID: 11500000, guid: 32d1302895f65b9438ca3d202f769674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelManager: {fileID: 0}
---- !u!61 &2118029110
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2118029108}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.12}
-    newSize: {x: 0.16, y: 0.12}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.12}
-  m_EdgeRadius: 0
+  damageToGive: 1
 --- !u!50 &2118029111
 Rigidbody2D:
   serializedVersion: 4
@@ -2253,6 +2299,7 @@ Transform:
   m_Children:
   - {fileID: 1574236790}
   - {fileID: 583287206}
+  - {fileID: 2061372531}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

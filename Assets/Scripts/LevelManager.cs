@@ -20,12 +20,15 @@ public class LevelManager : MonoBehaviour
     private float gravityStore;
 
     private CameraController camera;
+
+    public HealthManager healthManager;
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<PlayerController2D>();
         camera = FindObjectOfType<CameraController>();
         rend = player.GetComponent<Renderer>();
+        healthManager = FindObjectOfType<HealthManager>();
     }
 
     // Update is called once per frame
@@ -40,7 +43,6 @@ public class LevelManager : MonoBehaviour
         }
 
     public IEnumerator RespawnPlayerCo() {
-        //player.rb2d.velocity = Vector2.zero;
         player.enabled = false;
         camera.isFollowing = false;
         gravityStore = player.rb2d.gravityScale;
@@ -57,6 +59,8 @@ public class LevelManager : MonoBehaviour
         player.GetComponent<Rigidbody2D>().simulated = true;
         Instantiate (RespawnParticle, currentCheckpoint.transform.position, currentCheckpoint.transform.rotation);
         player.enabled = true;
+        healthManager.FullHealth();
+        healthManager.isDead = false;
         player.rb2d.gravityScale = gravityStore;
         rend.enabled = true;
     }
