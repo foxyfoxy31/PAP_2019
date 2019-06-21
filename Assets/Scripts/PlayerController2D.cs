@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController2D : MonoBehaviour
 {
-
+    public AudioSource jumpsound;
     public Animator animator; //defining animator
     public Rigidbody2D rb2d; // rigidbody
     SpriteRenderer spriteRenderer;
@@ -70,6 +70,7 @@ public class PlayerController2D : MonoBehaviour
                     if (Input.GetKey("space") && isGrounded || Input.GetKey("x")  && isGrounded) {
                         rb2d.velocity = new Vector2(rb2d.velocity.x, jumpspeed);
                         animator.Play("player_jumpfire");
+                        jumpsound.Play();
                     }
                     fireframe--; //reduces the firing frame delay by 1
         }
@@ -92,6 +93,7 @@ public class PlayerController2D : MonoBehaviour
         if (Input.GetKey("space") && isGrounded || Input.GetKey("x")  && isGrounded) {
             rb2d.velocity = new Vector2(rb2d.velocity.x, jumpspeed);
             animator.Play("player_jump");
+            jumpsound.Play();
         }
         //firing projectile script
         if (Input.GetKeyDown("z")){

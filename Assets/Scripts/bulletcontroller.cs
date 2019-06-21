@@ -34,6 +34,7 @@ public class bulletcontroller : MonoBehaviour
             //Destroy(other.gameObject);
 
             other.GetComponent<EnemyHealthManager>().giveDamage(damageToGive);
+            
         }
         Instantiate(impactParticle, transform.position, transform.rotation);
         Destroy(gameObject);
