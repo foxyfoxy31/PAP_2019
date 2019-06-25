@@ -11,6 +11,7 @@ public class PlayerController2D : MonoBehaviour
     [SerializeField]  //makes the variable appear as changeable in the editor
     private float runspeed = 1.5f;
     private float fireframe = 0f;
+    private float fireAnimDelay = 0f;
     public Transform firePoint;
     public GameObject bullet;
 
@@ -54,17 +55,26 @@ public class PlayerController2D : MonoBehaviour
                 //checking if +layer is running and firing @ the same time
                  if (Input.GetKey("d") || Input.GetKey("right")) {
                         rb2d.velocity = new Vector2(runspeed,rb2d.velocity.y);
-                        if (isGrounded) animator.Play("player_runfire");
+                        if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("player_runfire") && isGrounded && fireAnimDelay>0f){
+                                fireAnimDelay -= Time.deltaTime;
+                        }
+                        else if (isGrounded) animator.Play("player_runfire");
                         transform.eulerAngles = new Vector2(0,0);
                     }
                     else if (Input.GetKey("a") || Input.GetKey("left")) {
                         rb2d.velocity = new Vector2(-runspeed,rb2d.velocity.y);
-                        if (isGrounded) animator.Play("player_runfire");
+                        if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("player_runfire") && isGrounded && fireAnimDelay>0f){
+                                fireAnimDelay -= Time.deltaTime;
+                        }
+                        else if (isGrounded) animator.Play("player_runfire");
                         transform.eulerAngles = new Vector2(0,180);
                     }
                     //checking if standing still
                     else {
-                        if (isGrounded) animator.Play("player_fire");
+                        if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("player_fire") && isGrounded && fireAnimDelay>0f){
+                                fireAnimDelay -= Time.deltaTime;
+                        }
+                        else if (isGrounded) animator.Play("player_fire");
                         rb2d.velocity = new Vector2(0,rb2d.velocity.y);
                     }
                     if (Input.GetKey("space") && isGrounded || Input.GetKey("x")  && isGrounded) {
@@ -73,22 +83,30 @@ public class PlayerController2D : MonoBehaviour
                         jumpsound.Play();
                     }
                     fireframe -= Time.deltaTime; //reduces the firing frame delay by 1
-                    Debug.Log(fireframe);
         }
         else {
             //regular run checks
         if (Input.GetKey("d") || Input.GetKey("right")) {
             rb2d.velocity = new Vector2(runspeed,rb2d.velocity.y);
-            if (isGrounded) animator.Play("player_run");
+            if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("player_runfire") && isGrounded && fireAnimDelay>0f){
+            fireAnimDelay -= Time.deltaTime;
+            }
+            else if (isGrounded) animator.Play("player_run");
             transform.eulerAngles = new Vector2(0,0);
         }
         else if (Input.GetKey("a") || Input.GetKey("left")) {
             rb2d.velocity = new Vector2(-runspeed,rb2d.velocity.y);
-            if (isGrounded) animator.Play("player_run");
+            if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("player_runfire") && isGrounded && fireAnimDelay>0f){
+            fireAnimDelay -= Time.deltaTime;
+            }
+            else if (isGrounded) animator.Play("player_run");
             transform.eulerAngles = new Vector2(0,180);
         }
         else {
-            if (isGrounded) animator.Play("player_idle");
+            if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("player_fire") && isGrounded && fireAnimDelay>0f){
+            fireAnimDelay -= Time.deltaTime;
+            }
+            else if (isGrounded) animator.Play("player_idle");
             rb2d.velocity = new Vector2(0,rb2d.velocity.y);
         }
         if (Input.GetKey("space") && isGrounded || Input.GetKey("x")  && isGrounded) {
@@ -98,7 +116,8 @@ public class PlayerController2D : MonoBehaviour
         }
         //firing projectile script
         if (Input.GetKeyDown("z")){
-            fireframe = 0.2f; //frame delay for animation
+            fireframe = 0.2f;
+            fireAnimDelay = 0.5f; //frame delay for animation
             Instantiate(bullet, firePoint.position, firePoint.rotation);
         }
         }
