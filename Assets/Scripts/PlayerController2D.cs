@@ -10,7 +10,7 @@ public class PlayerController2D : MonoBehaviour
     SpriteRenderer spriteRenderer;
     [SerializeField]  //makes the variable appear as changeable in the editor
     private float runspeed = 1.5f;
-    private int fireframe = 0;
+    private float fireframe = 0f;
     public Transform firePoint;
     public GameObject bullet;
 
@@ -46,11 +46,11 @@ public class PlayerController2D : MonoBehaviour
         }
         else {
             isGrounded = false;
-            if (fireframe != 0) animator.Play("player_jumpfire"); //check if player is airborne and is firing projectile
+            if (fireframe > 0f) animator.Play("player_jumpfire"); //check if player is airborne and is firing projectile
             else animator.Play("player_jump"); //regular jump animation
         }
 
-        if (fireframe != 0) {
+        if (fireframe > 0f) {
                 //checking if +layer is running and firing @ the same time
                  if (Input.GetKey("d") || Input.GetKey("right")) {
                         rb2d.velocity = new Vector2(runspeed,rb2d.velocity.y);
@@ -72,7 +72,8 @@ public class PlayerController2D : MonoBehaviour
                         animator.Play("player_jumpfire");
                         jumpsound.Play();
                     }
-                    fireframe--; //reduces the firing frame delay by 1
+                    fireframe -= Time.deltaTime; //reduces the firing frame delay by 1
+                    Debug.Log(fireframe);
         }
         else {
             //regular run checks
@@ -97,7 +98,7 @@ public class PlayerController2D : MonoBehaviour
         }
         //firing projectile script
         if (Input.GetKeyDown("z")){
-            fireframe = 10; //frame delay for animation
+            fireframe = 0.2f; //frame delay for animation
             Instantiate(bullet, firePoint.position, firePoint.rotation);
         }
         }
