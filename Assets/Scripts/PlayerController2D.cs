@@ -14,7 +14,13 @@ public class PlayerController2D : MonoBehaviour
     private float fireAnimDelay = 0f;
     public Transform firePoint;
     public GameObject bullet;
-
+    public float knockback;
+    public float knockbackLength;
+    public float knockbackCount;
+    public bool knockFromRight;
+    private HealthManager healthManager;
+    public float invTime;
+    public float invCount;
     [SerializeField]    private float jumpspeed = 4f;
     bool isGrounded; //ground checker
 
@@ -33,12 +39,19 @@ public class PlayerController2D : MonoBehaviour
         animator = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        healthManager = FindObjectOfType<HealthManager>();
     }
 
 
     private void FixedUpdate() {
 
+        if (invCount > 0) {
+            healthManager.enabled = false;
+            invCount -= Time.deltaTime;
+        }
 
+        if (knockbackCount <= 0) {
+        healthManager.enabled = true;
         if (Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground")) || 
         Physics2D.Linecast(transform.position, groundCheckL.position, 1 << LayerMask.NameToLayer("Ground")) || 
         Physics2D.Linecast(transform.position, groundCheckR.position, 1 << LayerMask.NameToLayer("Ground")))
@@ -121,5 +134,15 @@ public class PlayerController2D : MonoBehaviour
             Instantiate(bullet, firePoint.position, firePoint.rotation);
         }
         }
+    } else {
+        invCount = invTime;
+        if (knockFromRight) {
+            rb2d.velocity = new Vector2 (-knockback, knockback);
+        }
+        if (!knockFromRight) {
+            rb2d.velocity = new Vector2 (knockback, knockback);
+        }
+        knockbackCount -= Time.deltaTime;
+    }
     }
 }
