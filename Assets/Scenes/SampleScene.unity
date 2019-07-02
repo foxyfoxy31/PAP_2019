@@ -2040,8 +2040,7 @@ MonoBehaviour:
   knockbackLength: 0.2
   knockbackCount: 0
   knockFromRight: 0
-  invTime: 2
-  invCount: 0
+  InvincibleDuration: 0
   jumpspeed: 4
   groundCheck: {fileID: 2065105164}
   groundCheckL: {fileID: 552253467}
@@ -2540,6 +2539,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 3862821096767091351, guid: 9572e79623609c74ca1456790be82907,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 3862821096767091344, guid: 9572e79623609c74ca1456790be82907,
         type: 3}

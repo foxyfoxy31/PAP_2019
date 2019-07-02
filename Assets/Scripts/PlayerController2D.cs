@@ -19,8 +19,10 @@ public class PlayerController2D : MonoBehaviour
     public float knockbackCount;
     public bool knockFromRight;
     private HealthManager healthManager;
-    public float invTime;
-    public float invCount;
+    private bool Invincible;
+
+    public float InvincibleDuration;
+
     [SerializeField]    private float jumpspeed = 4f;
     bool isGrounded; //ground checker
 
@@ -44,11 +46,6 @@ public class PlayerController2D : MonoBehaviour
 
 
     private void FixedUpdate() {
-
-        if (invCount > 0) {
-            healthManager.enabled = false;
-            invCount -= Time.deltaTime;
-        }
 
         if (knockbackCount <= 0) {
         healthManager.enabled = true;
@@ -135,7 +132,6 @@ public class PlayerController2D : MonoBehaviour
         }
         }
     } else {
-        invCount = invTime;
         if (knockFromRight) {
             rb2d.velocity = new Vector2 (-knockback, knockback);
         }
@@ -143,6 +139,32 @@ public class PlayerController2D : MonoBehaviour
             rb2d.velocity = new Vector2 (knockback, knockback);
         }
         knockbackCount -= Time.deltaTime;
+        /*
+        if (!Invincible) {
+            StopAllCoroutines();
+            Invincible = true;
+            Invoke("UndoInvincible", InvincibleDuration);
+            StartCoroutine(FlashSprite());
+            gameObject.layer = 13;
+        }
+         */
     }
+    }
+    void UndoInvincible()
+    {
+        Invincible = false;
+        StopAllCoroutines();
+        spriteRenderer.enabled = true;
+        gameObject.layer = 1;
+    }
+    IEnumerator FlashSprite()
+    {
+        while(true)
+        {
+            spriteRenderer.enabled = false;
+            yield return new WaitForSeconds(.02f);
+            spriteRenderer.enabled = true;
+            yield return new WaitForSeconds(.02f);
+        }
     }
 }
