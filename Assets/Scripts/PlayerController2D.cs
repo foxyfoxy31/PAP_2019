@@ -139,7 +139,6 @@ public class PlayerController2D : MonoBehaviour
             rb2d.velocity = new Vector2 (knockback, knockback);
         }
         knockbackCount -= Time.deltaTime;
-        /*
         if (!Invincible) {
             StopAllCoroutines();
             Invincible = true;
@@ -147,7 +146,6 @@ public class PlayerController2D : MonoBehaviour
             StartCoroutine(FlashSprite());
             gameObject.layer = 13;
         }
-         */
     }
     }
     void UndoInvincible()

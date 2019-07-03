@@ -2040,7 +2040,7 @@ MonoBehaviour:
   knockbackLength: 0.2
   knockbackCount: 0
   knockFromRight: 0
-  InvincibleDuration: 0
+  InvincibleDuration: 2
   jumpspeed: 4
   groundCheck: {fileID: 2065105164}
   groundCheckL: {fileID: 552253467}
