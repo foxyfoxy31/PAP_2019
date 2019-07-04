@@ -19,9 +19,11 @@ public class PlayerController2D : MonoBehaviour
     public float knockbackCount;
     public bool knockFromRight;
     private HealthManager healthManager;
-    private bool Invincible;
+    public bool Invincible;
 
     public float InvincibleDuration;
+
+    public float PixelsPerUnit;
 
     [SerializeField]    private float jumpspeed = 4f;
     bool isGrounded; //ground checker
@@ -46,7 +48,7 @@ public class PlayerController2D : MonoBehaviour
 
 
     private void FixedUpdate() {
-
+        rb2d.transform.position = PixelPerfectClamp(rb2d.transform.position, PixelsPerUnit);
         if (knockbackCount <= 0) {
         healthManager.enabled = true;
         if (Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground")) || 
@@ -139,14 +141,9 @@ public class PlayerController2D : MonoBehaviour
             rb2d.velocity = new Vector2 (knockback, knockback);
         }
         knockbackCount -= Time.deltaTime;
-        if (!Invincible) {
-            StopAllCoroutines();
-            Invincible = true;
-            Invoke("UndoInvincible", InvincibleDuration);
-            StartCoroutine(FlashSprite());
-            gameObject.layer = 13;
-        }
+        TurnInvincible();
     }
+    rb2d.transform.position = PixelPerfectClamp(rb2d.transform.position, PixelsPerUnit);
     }
     void UndoInvincible()
     {
@@ -164,5 +161,20 @@ public class PlayerController2D : MonoBehaviour
             spriteRenderer.enabled = true;
             yield return new WaitForSeconds(.02f);
         }
+    }
+
+    private Vector2 PixelPerfectClamp (Vector2 moveVector, float pixelsPerUnit) {
+        Vector2 vectorInPixels = new Vector2 (
+        Mathf.RoundToInt(moveVector.x * pixelsPerUnit),
+        Mathf.RoundToInt(moveVector.y * pixelsPerUnit));
+        return vectorInPixels / pixelsPerUnit;
+    }
+
+    public void TurnInvincible () {
+        StopAllCoroutines();
+        Invincible = true;
+        Invoke("UndoInvincible", InvincibleDuration);
+        StartCoroutine(FlashSprite());
+        gameObject.layer = 13;
     }
 }

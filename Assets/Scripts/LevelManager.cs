@@ -65,6 +65,8 @@ public class LevelManager : MonoBehaviour
         healthManager.isDead = false;
         player.rb2d.gravityScale = gravityStore;
         rend.enabled = true;
+        player.TurnInvincible();
+
     }
 
 }
