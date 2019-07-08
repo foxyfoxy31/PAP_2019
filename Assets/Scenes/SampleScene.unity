@@ -2040,6 +2040,7 @@ MonoBehaviour:
   knockbackLength: 0.2
   knockbackCount: 0
   knockFromRight: 0
+  Invincible: 0
   InvincibleDuration: 2
   PixelsPerUnit: 48
   jumpspeed: 4
