@@ -103,13 +103,46 @@ TextureImporter:
     second: lucas_idle2
   - first:
       213: -1042038247396554037
-    second: lucas_0
+    second: lucas_idle1
   - first:
       213: 5199453955538469441
     second: bullet1
   - first:
       213: 364093396588394500
     second: bullet2
+  - first:
+      213: 8849414465936233100
+    second: lucas_run4
+  - first:
+      213: -7752733530887636749
+    second: lucas_run5
+  - first:
+      213: -7080955236042899600
+    second: lucas_run6
+  - first:
+      213: -2421307801138076382
+    second: lucas_fire1
+  - first:
+      213: -5042477586959785617
+    second: lucas_fire2
+  - first:
+      213: 5208483711464526525
+    second: lucas_runfire3
+  - first:
+      213: 168734837520770857
+    second: lucas_runfire4
+  - first:
+      213: 7828392591913127390
+    second: lucas_runfire5
+  - first:
+      213: -7084336318998423270
+    second: lucas_runfire6
+  - first:
+      213: -8968456634058404603
+    second: lucas_21
+  - first:
+      213: 181390632953657861
+    second: lucas_22
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -200,13 +233,13 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 9
-      pivot: {x: 0.48780894, y: 0.17812793}
+      pivot: {x: 0.49271297, y: 0.18100612}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: edcb20dfcc650e74f879e11632a1338b
+      spriteID: d5dab98606dbf094ba376aed02c5ec89
       internalID: 21300000
       vertices: []
       indices: 
@@ -221,13 +254,13 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 9
-      pivot: {x: 0.5113966, y: 0.17803065}
+      pivot: {x: 0.5096679, y: 0.17736308}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bafd0587c22cfc44da4f69961b881d64
+      spriteID: f89af1455a953214bafff631e40a9f17
       internalID: -1042038247396554037
       vertices: []
       indices: 
@@ -242,13 +275,13 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 9
-      pivot: {x: 0.49071613, y: 0.17839241}
+      pivot: {x: 0.4890693, y: 0.17736308}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8bfb3b6eb1a10bc42b9cb53b6c3905e5
+      spriteID: 2745dd8e63d6cf8458712a464b93b2bf
       internalID: -7413178886767990689
       vertices: []
       indices: 
@@ -258,18 +291,18 @@ TextureImporter:
       name: lucas_idle4
       rect:
         serializedVersion: 2
-        x: 144
+        x: 145
         y: 302
         width: 48
         height: 48
       alignment: 9
-      pivot: {x: 0.49108443, y: 0.17646725}
+      pivot: {x: 0.46902943, y: 0.17736308}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: effc9e26b50e85040894a4af667d2ab6
+      spriteID: 3c2121c19a03ba248a4a0e64d15b920a
       internalID: 21300002
       vertices: []
       indices: 
@@ -284,68 +317,362 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 9
-      pivot: {x: 0.46844354, y: 0.17842801}
+      pivot: {x: 0.46823597, y: 0.17554092}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38685a8128af0b644b9407d0663cc925
+      spriteID: 2470107ad54abd241a7e25d49ddea404
       internalID: -8228523141992374140
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lucas_0
+      name: lucas_run1
       rect:
         serializedVersion: 2
-        x: 491
-        y: 111
-        width: 9
-        height: 120
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 240
+        y: 302
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5416667, y: 0.16666667}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3135f07eb7f19c4396ef9ee9a9b9831
-      internalID: -1042038247396554037
+      spriteID: 9a0a6e8d08b68b6499692c4c9553f835
+      internalID: 21300004
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bullet1
+      name: lucas_run2
       rect:
         serializedVersion: 2
-        x: 400
-        y: 37
-        width: 10
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 288
+        y: 302
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5208333, y: 0.1823438}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 683f43ffd88201e438ec8473b913e2e1
-      internalID: 5199453955538469441
+      spriteID: 5624fdbcc86c7554ba420e164a98b212
+      internalID: 21300006
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bullet2
+      name: lucas_run3
       rect:
         serializedVersion: 2
-        x: 451
-        y: 39
-        width: 10
-        height: 5
+        x: 336
+        y: 302
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5222912, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51119982733c94642bb25d1cca9d4e8a
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lucas_run4
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 302
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a29d995bef330ac46b563c1014165ffa
+      internalID: 8849414465936233100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lucas_run5
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 302
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5208333, y: 0.1875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 124ea4eacfae62e4c944bd0d19eb3200
+      internalID: -7752733530887636749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lucas_run6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 254
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.45833334, y: 0.1875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 352b20aa550900a44a454b43ac67b77d
+      internalID: -7080955236042899600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lucas_fire1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 254
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5158afca4752f3d43bc5f87fb3fa3898
+      internalID: -2421307801138076382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lucas_fire2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 254
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 706dab8d71aa9fb4b96cd25e3e73a6d6
+      internalID: -5042477586959785617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lucas_runfire1
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 254
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.20833333}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fada799954ffa6499b7bf1a16431649
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lucas_runfire2
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 254
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.47916666, y: 0.20833333}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 215185508dcba0a44a547ec5a47aed7d
+      internalID: -9033063289740846144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lucas_runfire3
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 254
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.47916666, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a10708b779bb9cf45861741e387d1ca9
+      internalID: 5208483711464526525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lucas_runfire4
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 254
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99ec2a9dbaf0a304d8996a05594f0f40
+      internalID: 168734837520770857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lucas_runfire5
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 254
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5208333, y: 0.1875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6be3938545af2bf469230d1dc69d4d2c
+      internalID: 7828392591913127390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lucas_runfire6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 254
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f65fadd3c896a194baec7799d3d53978
+      internalID: -7084336318998423270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lucas_jump
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 254
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5208333, y: 0.22916667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95424db746a37bc4fbf0a0cfb260b3ad
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lucas_jumpfire
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 206
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.45833334, y: 0.3125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9953a862615a2d4792173cc17f76af0
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lucas_21
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 14
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -353,8 +680,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 423af450856948d45954d1a998c68850
-      internalID: 364093396588394500
+      spriteID: 9118a040b549f8a449aa854dc07e6517
+      internalID: -8968456634058404603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lucas_22
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 14
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 924ce235abc26564b9f7bb6d5e77a328
+      internalID: 181390632953657861
       vertices: []
       indices: 
       edges: []

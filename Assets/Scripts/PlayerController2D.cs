@@ -48,7 +48,7 @@ public class PlayerController2D : MonoBehaviour
 
 
     private void FixedUpdate() {
-        rb2d.transform.position = PixelPerfectClamp(rb2d.transform.position, PixelsPerUnit);
+        //rb2d.transform.position = PixelPerfectClamp(rb2d.transform.position, PixelsPerUnit);
         if (knockbackCount <= 0) {
         healthManager.enabled = true;
         if (Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground")) || 
@@ -143,7 +143,7 @@ public class PlayerController2D : MonoBehaviour
         knockbackCount -= Time.deltaTime;
         TurnInvincible();
     }
-    rb2d.transform.position = PixelPerfectClamp(rb2d.transform.position, PixelsPerUnit);
+    //rb2d.transform.position = PixelPerfectClamp(rb2d.transform.position, PixelsPerUnit);
     }
     void UndoInvincible()
     {
