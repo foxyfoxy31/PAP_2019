@@ -491,7 +491,7 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 9
-      pivot: {x: 0.49159703, y: 0.17787044}
+      pivot: {x: 0.5090826, y: 0.17787044}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -512,7 +512,7 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.20833333}
+      pivot: {x: 0.44054922, y: 0.18787766}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -533,7 +533,7 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 9
-      pivot: {x: 0.47916666, y: 0.20833333}
+      pivot: {x: 0.5287215, y: 0.17021497}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -554,7 +554,7 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 9
-      pivot: {x: 0.47501627, y: 0.17065112}
+      pivot: {x: 0.46739325, y: 0.17446327}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -751,27 +751,6 @@ TextureImporter:
       bones: []
       spriteID: 5838b2d707f307f4d99bb86a9cea959d
       internalID: 21300030
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lucas_1
-      rect:
-        serializedVersion: 2
-        x: 125
-        y: 245
-        width: 6
-        height: 2
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6df3dad4e3850c94aa8ad07d0a914bb0
-      internalID: -1850363733428201762
       vertices: []
       indices: 
       edges: []
