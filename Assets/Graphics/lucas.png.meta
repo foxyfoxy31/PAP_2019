@@ -112,7 +112,7 @@ TextureImporter:
     second: bullet2
   - first:
       213: 8849414465936233100
-    second: lucas_run4
+    second: lucas_dash
   - first:
       213: -7752733530887636749
     second: lucas_run5
@@ -399,7 +399,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lucas_run4
+      name: lucas_dash
       rect:
         serializedVersion: 2
         x: 384
@@ -407,7 +407,7 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.1875}
+      pivot: {x: 0.46489844, y: 0.18223508}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -659,7 +659,7 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 9
-      pivot: {x: 0.45833334, y: 0.3125}
+      pivot: {x: 0.4575001, y: 0.33333364}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
