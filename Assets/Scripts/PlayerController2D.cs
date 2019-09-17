@@ -14,8 +14,8 @@ public class PlayerController2D : MonoBehaviour
     private float fireAnimDelay = 0f;
     public Transform firePoint;
     public GameObject bullet;
-    public float knockback;
-    public float knockbackLength;
+    public float knockback = 2f;
+    public float knockbackLength = 0.4f;
     public float knockbackCount;
     public bool knockFromRight;
     private HealthManager healthManager;
@@ -25,7 +25,7 @@ public class PlayerController2D : MonoBehaviour
 
     public float PixelsPerUnit;
 
-    [SerializeField]    private float jumpspeed = 4f;
+    [SerializeField]    private float jumpspeed = 6f;
     bool isGrounded; //ground checker
 
         [SerializeField]
