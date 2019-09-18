@@ -25,7 +25,7 @@ public class PlayerController2D : MonoBehaviour
 
     public float PixelsPerUnit;
 
-    [SerializeField]    private float jumpspeed = 6f;
+    [SerializeField]    private float jumpspeed = 5.4f;
     bool isGrounded; //ground checker
 
         [SerializeField]
