@@ -9,7 +9,7 @@ public class PlayerController2D : MonoBehaviour
     public Rigidbody2D rb2d; // rigidbody
     SpriteRenderer spriteRenderer;
     [SerializeField]  //makes the variable appear as changeable in the editor
-    private float runspeed = 1.5f;
+    private float runspeed = 1.6f;
     private float fireframe = 0f;
     private float fireAnimDelay = 0f;
     public Transform firePoint;
