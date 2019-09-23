@@ -89,7 +89,7 @@ public class PlayerController2D : MonoBehaviour
                         else if (isGrounded) animator.Play("player_fire");
                         rb2d.velocity = new Vector2(0,rb2d.velocity.y);
                     }
-                    if (Input.GetKey("space") && isGrounded || Input.GetKey("x")  && isGrounded) {
+                    if (Input.GetKey("space") && isGrounded || Input.GetKey("x")  && isGrounded || Input.GetKey("up")  && isGrounded) {
                         rb2d.velocity = new Vector2(rb2d.velocity.x, jumpspeed);
                         animator.Play("player_jumpfire");
                         jumpsound.Play();
@@ -121,7 +121,7 @@ public class PlayerController2D : MonoBehaviour
             else if (isGrounded) animator.Play("player_idle");
             rb2d.velocity = new Vector2(0,rb2d.velocity.y);
         }
-        if (Input.GetKey("space") && isGrounded || Input.GetKey("x")  && isGrounded) {
+        if (Input.GetKey("space") && isGrounded || Input.GetKey("x")  && isGrounded || Input.GetKey("up")  && isGrounded) {
             rb2d.velocity = new Vector2(rb2d.velocity.x, jumpspeed);
             animator.Play("player_jump");
             jumpsound.Play();
