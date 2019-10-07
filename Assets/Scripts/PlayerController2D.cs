@@ -188,6 +188,24 @@ public class PlayerController2D : MonoBehaviour
     }
 
 
+    private void Update() {
+         if (fireframe > 0f) {
+            if (Input.GetKeyDown("space") && !doubleJump && !isGrounded || Input.GetKeyDown("x") && !doubleJump && !isGrounded || Input.GetKeyDown("up") && !doubleJump && !isGrounded) {
+                rb2d.velocity = new Vector2(rb2d.velocity.x, jumpspeed - 1f);
+                animator.Play("player_jumpfire");
+                jumpsound.Play();
+                doubleJump = true;
+                    }
+        }
+        else {
+            if (Input.GetKeyDown("space") && !doubleJump && !isGrounded || Input.GetKeyDown("x") && !doubleJump && !isGrounded || Input.GetKeyDown("up") && !doubleJump && !isGrounded) {
+                rb2d.velocity = new Vector2(rb2d.velocity.x, jumpspeed - 1f);
+                animator.Play("player_jump");
+                jumpsound.Play();
+                doubleJump = true;
+            }
+        }
+    }
     void UndoInvincible()
     {
         Invincible = false;
