@@ -9,22 +9,26 @@ public class PlayerController2D : MonoBehaviour
     public Rigidbody2D rb2d; // rigidbody
     SpriteRenderer spriteRenderer;
     [SerializeField]  //makes the variable appear as changeable in the editor
-    private float runspeed = 1.6f;
-    private float fireframe = 0f;
-    private float fireAnimDelay = 0f;
     public Transform firePoint;
     public GameObject bullet;
     public float knockback = 2f;
     public float knockbackLength = 0.4f;
     public float knockbackCount;
     public bool knockFromRight;
-    private HealthManager healthManager;
     public bool Invincible;
-
     public float InvincibleDuration;
 
 
+
+
+    private float runspeed = 1.6f;
+    private float fireframe = 0f;
+    private float fireAnimDelay = 0f;
+    private HealthManager healthManager;
     [SerializeField]    private float jumpspeed = 5.4f;
+    private bool doubleJump;
+
+
     bool isGrounded; //ground checker
 
         [SerializeField]
@@ -35,7 +39,14 @@ public class PlayerController2D : MonoBehaviour
 
         [SerializeField]
         Transform groundCheckR;
+
+
+
+
     // Start is called before the first frame update
+
+
+
     void Start()
     {
         //gets all necessary components
@@ -65,11 +76,14 @@ public class PlayerController2D : MonoBehaviour
             else animator.Play("player_jump"); //regular jump animation
         }
 
+        if (isGrounded) doubleJump = false;
+
 
 
 
         if (fireframe > 0f) {
-                //checking if +layer is running and firing @ the same time
+
+                //checking if player is running and firing @ the same time
                  if (Input.GetKey("d") || Input.GetKey("right")) {
                         rb2d.velocity = new Vector2(runspeed,rb2d.velocity.y);
                         if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("player_runfire") && isGrounded && fireAnimDelay>0f){
@@ -99,6 +113,12 @@ public class PlayerController2D : MonoBehaviour
                         animator.Play("player_jumpfire");
                         jumpsound.Play();
                     }
+                    if (Input.GetKeyDown("space") && !doubleJump && !isGrounded || Input.GetKeyDown("x") && !doubleJump && !isGrounded || Input.GetKeyDown("up") && !doubleJump && !isGrounded) {
+                        rb2d.velocity = new Vector2(rb2d.velocity.x, jumpspeed - 1f);
+                        animator.Play("player_jumpfire");
+                        jumpsound.Play();
+                        doubleJump = true;
+                    }
                     fireframe -= Time.deltaTime; //reduces the firing frame delay by 1
         }
 
@@ -107,6 +127,8 @@ public class PlayerController2D : MonoBehaviour
 
         else {
             //regular run checks
+
+
         if (Input.GetKey("d") || Input.GetKey("right")) {
             rb2d.velocity = new Vector2(runspeed,rb2d.velocity.y);
             if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("player_runfire") && isGrounded && fireAnimDelay>0f){
@@ -134,6 +156,12 @@ public class PlayerController2D : MonoBehaviour
             rb2d.velocity = new Vector2(rb2d.velocity.x, jumpspeed);
             animator.Play("player_jump");
             jumpsound.Play();
+        }
+        if (Input.GetKeyDown("space") && !doubleJump && !isGrounded || Input.GetKeyDown("x") && !doubleJump && !isGrounded || Input.GetKeyDown("up") && !doubleJump && !isGrounded) {
+            rb2d.velocity = new Vector2(rb2d.velocity.x, jumpspeed - 1f);
+            animator.Play("player_jump");
+            jumpsound.Play();
+            doubleJump = true;
         }
         //firing projectile script
         if (Input.GetKeyDown("z")){
