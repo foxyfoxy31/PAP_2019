@@ -23,7 +23,6 @@ public class PlayerController2D : MonoBehaviour
 
     public float InvincibleDuration;
 
-    public float PixelsPerUnit;
 
     [SerializeField]    private float jumpspeed = 5.4f;
     bool isGrounded; //ground checker
@@ -48,9 +47,12 @@ public class PlayerController2D : MonoBehaviour
 
 
     private void FixedUpdate() {
-        //rb2d.transform.position = PixelPerfectClamp(rb2d.transform.position, PixelsPerUnit);
         if (knockbackCount <= 0) {
         healthManager.enabled = true;
+
+
+
+
         if (Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground")) || 
         Physics2D.Linecast(transform.position, groundCheckL.position, 1 << LayerMask.NameToLayer("Ground")) || 
         Physics2D.Linecast(transform.position, groundCheckR.position, 1 << LayerMask.NameToLayer("Ground")))
@@ -62,6 +64,9 @@ public class PlayerController2D : MonoBehaviour
             if (fireframe > 0f) animator.Play("player_jumpfire"); //check if player is airborne and is firing projectile
             else animator.Play("player_jump"); //regular jump animation
         }
+
+
+
 
         if (fireframe > 0f) {
                 //checking if +layer is running and firing @ the same time
@@ -96,6 +101,10 @@ public class PlayerController2D : MonoBehaviour
                     }
                     fireframe -= Time.deltaTime; //reduces the firing frame delay by 1
         }
+
+
+
+
         else {
             //regular run checks
         if (Input.GetKey("d") || Input.GetKey("right")) {
@@ -133,6 +142,11 @@ public class PlayerController2D : MonoBehaviour
             Instantiate(bullet, firePoint.position, firePoint.rotation);
         }
         }
+
+
+
+
+
     } else {
         if (knockFromRight) {
             rb2d.velocity = new Vector2 (-knockback, knockback);
@@ -143,8 +157,9 @@ public class PlayerController2D : MonoBehaviour
         knockbackCount -= Time.deltaTime;
         TurnInvincible();
     }
-    //rb2d.transform.position = PixelPerfectClamp(rb2d.transform.position, PixelsPerUnit);
     }
+
+
     void UndoInvincible()
     {
         Invincible = false;
@@ -163,12 +178,6 @@ public class PlayerController2D : MonoBehaviour
         }
     }
 
-    private Vector2 PixelPerfectClamp (Vector2 moveVector, float pixelsPerUnit) {
-        Vector2 vectorInPixels = new Vector2 (
-        Mathf.RoundToInt(moveVector.x * pixelsPerUnit),
-        Mathf.RoundToInt(moveVector.y * pixelsPerUnit));
-        return vectorInPixels / pixelsPerUnit;
-    }
 
     public void TurnInvincible () {
         StopAllCoroutines();
