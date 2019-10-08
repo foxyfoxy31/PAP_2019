@@ -113,12 +113,6 @@ public class PlayerController2D : MonoBehaviour
                         animator.Play("player_jumpfire");
                         jumpsound.Play();
                     }
-                    if (Input.GetKeyDown("space") && !doubleJump && !isGrounded || Input.GetKeyDown("x") && !doubleJump && !isGrounded || Input.GetKeyDown("up") && !doubleJump && !isGrounded) {
-                        rb2d.velocity = new Vector2(rb2d.velocity.x, jumpspeed - 1f);
-                        animator.Play("player_jumpfire");
-                        jumpsound.Play();
-                        doubleJump = true;
-                    }
                     fireframe -= Time.deltaTime; //reduces the firing frame delay by 1
         }
 
@@ -157,18 +151,6 @@ public class PlayerController2D : MonoBehaviour
             animator.Play("player_jump");
             jumpsound.Play();
         }
-        if (Input.GetKeyDown("space") && !doubleJump && !isGrounded || Input.GetKeyDown("x") && !doubleJump && !isGrounded || Input.GetKeyDown("up") && !doubleJump && !isGrounded) {
-            rb2d.velocity = new Vector2(rb2d.velocity.x, jumpspeed - 1f);
-            animator.Play("player_jump");
-            jumpsound.Play();
-            doubleJump = true;
-        }
-        //firing projectile script
-        if (Input.GetKeyDown("z")){
-            fireframe = 0.2f;
-            fireAnimDelay = 0.5f; //frame delay for animation
-            Instantiate(bullet, firePoint.position, firePoint.rotation);
-        }
         }
 
 
@@ -203,6 +185,11 @@ public class PlayerController2D : MonoBehaviour
                 animator.Play("player_jump");
                 jumpsound.Play();
                 doubleJump = true;
+            }
+            if (Input.GetKeyDown("z")){
+                fireframe = 0.2f;
+                fireAnimDelay = 0.5f; //frame delay for animation
+                Instantiate(bullet, firePoint.position, firePoint.rotation);
             }
         }
     }
