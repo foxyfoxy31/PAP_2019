@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class PlayerController2D : MonoBehaviour
 {
+    /*
+
+
+    PUBLIC VARS
+
+
+     */
+
+
     public AudioSource jumpsound;
     public Animator animator; //defining animator
     public Rigidbody2D rb2d; // rigidbody
@@ -19,6 +28,13 @@ public class PlayerController2D : MonoBehaviour
     public float InvincibleDuration;
 
 
+    /*
+
+
+    PRIVATE VARS
+
+
+     */
 
 
     private float runspeed = 1.6f;
@@ -27,6 +43,16 @@ public class PlayerController2D : MonoBehaviour
     private HealthManager healthManager;
     [SerializeField]    private float jumpspeed = 5.4f;
     private bool doubleJump;
+
+
+    /*
+
+
+    GROUND CHECKS
+
+
+     */
+
 
 
     bool isGrounded; //ground checker
@@ -57,7 +83,7 @@ public class PlayerController2D : MonoBehaviour
     }
 
 
-    private void FixedUpdate() {
+    private void FixedUpdate() { //updates in an fast but inconsistent manner (actual time)
         if (knockbackCount <= 0) {
         healthManager.enabled = true;
 
@@ -157,7 +183,7 @@ public class PlayerController2D : MonoBehaviour
 
 
 
-    } else {
+    } else { // knockback applier
         if (knockFromRight) {
             rb2d.velocity = new Vector2 (-knockback, knockback);
         }
@@ -170,7 +196,7 @@ public class PlayerController2D : MonoBehaviour
     }
 
 
-    private void Update() {
+    private void Update() {  // updates every frame
          if (fireframe > 0f) {
             if (Input.GetKeyDown("space") && !doubleJump && !isGrounded || Input.GetKeyDown("x") && !doubleJump && !isGrounded || Input.GetKeyDown("up") && !doubleJump && !isGrounded) {
                 rb2d.velocity = new Vector2(rb2d.velocity.x, jumpspeed - 1f);
@@ -193,6 +219,9 @@ public class PlayerController2D : MonoBehaviour
             }
         }
     }
+
+
+
     void UndoInvincible()
     {
         Invincible = false;
@@ -200,6 +229,8 @@ public class PlayerController2D : MonoBehaviour
         spriteRenderer.enabled = true;
         gameObject.layer = 1;
     }
+
+    
     IEnumerator FlashSprite()
     {
         while(true)
