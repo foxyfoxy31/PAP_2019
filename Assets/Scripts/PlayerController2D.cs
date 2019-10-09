@@ -26,7 +26,7 @@ public class PlayerController2D : MonoBehaviour
     public bool knockFromRight;
     public bool Invincible;
     public float InvincibleDuration;
-
+    public GameObject djParticle;
 
     /*
 
@@ -205,10 +205,10 @@ public class PlayerController2D : MonoBehaviour
                     } 
             if (Input.GetKeyDown("space") && !doubleJump && !isGrounded || Input.GetKeyDown("x") && !doubleJump && !isGrounded || Input.GetKeyDown("up") && !doubleJump && !isGrounded) {
                 rb2d.velocity = new Vector2(rb2d.velocity.x, jumpspeed - 1f);
-                animator.Play("player_jumpfire");
+                Instantiate(djParticle, transform.position, transform.rotation);
                 jumpsound.Play();
                 doubleJump = true;
-                    }
+            }
         }
         else {
             if (Input.GetKeyDown("space") && isGrounded || Input.GetKeyDown("x")  && isGrounded || Input.GetKeyDown("up")  && isGrounded) {
@@ -219,8 +219,9 @@ public class PlayerController2D : MonoBehaviour
 
             if (Input.GetKeyDown("space") && !doubleJump && !isGrounded || Input.GetKeyDown("x") && !doubleJump && !isGrounded || Input.GetKeyDown("up") && !doubleJump && !isGrounded) {
                 rb2d.velocity = new Vector2(rb2d.velocity.x, jumpspeed - 1f);
-                animator.Play("player_jump");
                 jumpsound.Play();
+                                Instantiate(djParticle, transform.position, transform.rotation);
+
                 doubleJump = true;
             }
             if (Input.GetKeyDown("z")){
