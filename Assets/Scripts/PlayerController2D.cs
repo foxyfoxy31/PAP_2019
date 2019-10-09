@@ -103,7 +103,12 @@ public class PlayerController2D : MonoBehaviour
                 else animator.Play("player_jump"); //regular jump animation
             }
             else {
-                animator.Play("player_doublejump");
+                if (fireframe > 0f) {
+                    animator.Play("player_doublejumpfire");
+                }
+                else {
+                    animator.Play("player_doublejump");
+                }
             }
         }
 
@@ -193,7 +198,7 @@ public class PlayerController2D : MonoBehaviour
 
     private void Update() {  // updates every frame
          if (fireframe > 0f) {
-            if (Input.GetKey("space") && isGrounded || Input.GetKey("x")  && isGrounded || Input.GetKey("up")  && isGrounded) {
+            if (Input.GetKeyDown("space") && isGrounded || Input.GetKeyDown("x")  && isGrounded || Input.GetKeyDown("up")  && isGrounded) {
                         rb2d.velocity = new Vector2(rb2d.velocity.x, jumpspeed);
                         animator.Play("player_jumpfire");
                         jumpsound.Play();
@@ -206,7 +211,7 @@ public class PlayerController2D : MonoBehaviour
                     }
         }
         else {
-            if (Input.GetKey("space") && isGrounded || Input.GetKey("x")  && isGrounded || Input.GetKey("up")  && isGrounded) {
+            if (Input.GetKeyDown("space") && isGrounded || Input.GetKeyDown("x")  && isGrounded || Input.GetKeyDown("up")  && isGrounded) {
             rb2d.velocity = new Vector2(rb2d.velocity.x, jumpspeed);
             animator.Play("player_jump");
             jumpsound.Play();

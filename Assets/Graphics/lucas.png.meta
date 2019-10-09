@@ -133,10 +133,10 @@ TextureImporter:
     second: lucas_runfire4
   - first:
       213: 7828392591913127390
-    second: lucas_runfire5
+    second: lucas_doublejumpfire
   - first:
       213: -7084336318998423270
-    second: lucas_runfire6
+    second: lucas_doublejump
   - first:
       213: -8968456634058404603
     second: bullet
@@ -590,7 +590,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lucas_runfire5
+      name: lucas_doublejumpfire
       rect:
         serializedVersion: 2
         x: 336
@@ -598,7 +598,7 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 9
-      pivot: {x: 0.5208333, y: 0.1875}
+      pivot: {x: 0.5, y: 0.22916667}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -611,7 +611,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lucas_runfire6
+      name: lucas_doublejump
       rect:
         serializedVersion: 2
         x: 384

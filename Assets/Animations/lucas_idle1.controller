@@ -301,6 +301,9 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: -2073964325372967971}
     m_Position: {x: 822.8583, y: 488.21695, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 7953840775484729216}
+    m_Position: {x: 857.8583, y: 553.2169, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -332,6 +335,32 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 9c7119b510150ea4784f4eb0f982243f, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &7953840775484729216
+AnimatorState:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: player_doublejumpfire
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: ad3baea3da2ba7b4ead42d37043ac8a8, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
