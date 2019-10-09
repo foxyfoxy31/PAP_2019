@@ -98,8 +98,13 @@ public class PlayerController2D : MonoBehaviour
         }
         else {
             isGrounded = false;
-            if (fireframe > 0f) animator.Play("player_jumpfire"); //check if player is airborne and is firing projectile
-            else animator.Play("player_jump"); //regular jump animation
+            if (!doubleJump) {
+                if (fireframe > 0f) animator.Play("player_jumpfire"); //check if player is airborne and is firing projectile
+                else animator.Play("player_jump"); //regular jump animation
+            }
+            else {
+                animator.Play("player_doublejump");
+            }
         }
 
         if (isGrounded) doubleJump = false;
@@ -134,11 +139,6 @@ public class PlayerController2D : MonoBehaviour
                         else if (isGrounded) animator.Play("player_fire");
                         rb2d.velocity = new Vector2(0,rb2d.velocity.y);
                     }
-                    if (Input.GetKey("space") && isGrounded || Input.GetKey("x")  && isGrounded || Input.GetKey("up")  && isGrounded) {
-                        rb2d.velocity = new Vector2(rb2d.velocity.x, jumpspeed);
-                        animator.Play("player_jumpfire");
-                        jumpsound.Play();
-                    }
                     fireframe -= Time.deltaTime; //reduces the firing frame delay by 1
         }
 
@@ -172,11 +172,6 @@ public class PlayerController2D : MonoBehaviour
             else if (isGrounded) animator.Play("player_idle");
             rb2d.velocity = new Vector2(0,rb2d.velocity.y);
         }
-        if (Input.GetKey("space") && isGrounded || Input.GetKey("x")  && isGrounded || Input.GetKey("up")  && isGrounded) {
-            rb2d.velocity = new Vector2(rb2d.velocity.x, jumpspeed);
-            animator.Play("player_jump");
-            jumpsound.Play();
-        }
         }
 
 
@@ -198,6 +193,11 @@ public class PlayerController2D : MonoBehaviour
 
     private void Update() {  // updates every frame
          if (fireframe > 0f) {
+            if (Input.GetKey("space") && isGrounded || Input.GetKey("x")  && isGrounded || Input.GetKey("up")  && isGrounded) {
+                        rb2d.velocity = new Vector2(rb2d.velocity.x, jumpspeed);
+                        animator.Play("player_jumpfire");
+                        jumpsound.Play();
+                    } 
             if (Input.GetKeyDown("space") && !doubleJump && !isGrounded || Input.GetKeyDown("x") && !doubleJump && !isGrounded || Input.GetKeyDown("up") && !doubleJump && !isGrounded) {
                 rb2d.velocity = new Vector2(rb2d.velocity.x, jumpspeed - 1f);
                 animator.Play("player_jumpfire");
@@ -206,6 +206,12 @@ public class PlayerController2D : MonoBehaviour
                     }
         }
         else {
+            if (Input.GetKey("space") && isGrounded || Input.GetKey("x")  && isGrounded || Input.GetKey("up")  && isGrounded) {
+            rb2d.velocity = new Vector2(rb2d.velocity.x, jumpspeed);
+            animator.Play("player_jump");
+            jumpsound.Play();
+        }
+
             if (Input.GetKeyDown("space") && !doubleJump && !isGrounded || Input.GetKeyDown("x") && !doubleJump && !isGrounded || Input.GetKeyDown("up") && !doubleJump && !isGrounded) {
                 rb2d.velocity = new Vector2(rb2d.velocity.x, jumpspeed - 1f);
                 animator.Play("player_jump");
