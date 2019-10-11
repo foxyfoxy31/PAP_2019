@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: jetpack
+  m_Name: heavy_enemy
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,16 +20,16 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 1247718424749772999, guid: f7fd7ebf55c5b1f4999ccd63d1771f23,
+      value: {fileID: -981251727503553126, guid: f7fd7ebf55c5b1f4999ccd63d1771f23,
         type: 3}
-    - time: 0.14285715
-      value: {fileID: 6451418690654025234, guid: f7fd7ebf55c5b1f4999ccd63d1771f23,
+    - time: 0.25
+      value: {fileID: -7521937734509610878, guid: f7fd7ebf55c5b1f4999ccd63d1771f23,
         type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 7
+  m_SampleRate: 4
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -44,14 +44,14 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 1247718424749772999, guid: f7fd7ebf55c5b1f4999ccd63d1771f23, type: 3}
-    - {fileID: 6451418690654025234, guid: f7fd7ebf55c5b1f4999ccd63d1771f23, type: 3}
+    - {fileID: -981251727503553126, guid: f7fd7ebf55c5b1f4999ccd63d1771f23, type: 3}
+    - {fileID: -7521937734509610878, guid: f7fd7ebf55c5b1f4999ccd63d1771f23, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.2857143
+    m_StopTime: 0.5
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

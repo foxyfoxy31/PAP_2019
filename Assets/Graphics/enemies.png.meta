@@ -14,6 +14,12 @@ TextureImporter:
   - first:
       213: 6451418690654025234
     second: jetpack_2
+  - first:
+      213: -981251727503553126
+    second: heavy_1
+  - first:
+      213: -7521937734509610878
+    second: heavy_2
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -177,6 +183,48 @@ TextureImporter:
       bones: []
       spriteID: 7687c18c40450274f848a5793380fa9e
       internalID: 6451418690654025234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heavy_1
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 432
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.4166667, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07f435c76ffcf864fa892e85188866df
+      internalID: -981251727503553126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heavy_2
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 432
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.4166667, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87dce5a1419dce84eb14ccebcb776a37
+      internalID: -7521937734509610878
       vertices: []
       indices: 
       edges: []
