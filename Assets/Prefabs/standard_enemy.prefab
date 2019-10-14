@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03eabb2beb7a4f94983064508159f734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1.2
+  moveSpeed: 1
   moveRight: 0
   rb2d: {fileID: 0}
   wallCheck: {fileID: 8268770819209159162}
