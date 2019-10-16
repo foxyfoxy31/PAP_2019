@@ -43,7 +43,11 @@ public class PlayerController2D : MonoBehaviour
     private HealthManager healthManager;
     [SerializeField]    private float jumpspeed = 5.4f;
     private bool doubleJump;
-
+    [SerializeField]    private float dashSpeed;
+    [SerializeField]    private float startDashTime;
+    [SerializeField]    private float dashTime;
+    private bool isDashing;
+    private bool dashRight;
 
     /*
 
@@ -119,29 +123,36 @@ public class PlayerController2D : MonoBehaviour
 
         if (fireframe > 0f) {
 
+
                 //checking if player is running and firing @ the same time
                  if (Input.GetKey("d") || Input.GetKey("right")) {
-                        rb2d.velocity = new Vector2(runspeed,rb2d.velocity.y);
-                        if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("player_runfire") && isGrounded && fireAnimDelay>0f){
-                                fireAnimDelay -= Time.deltaTime;
+                        if (!isDashing || !dashRight) {
+                            rb2d.velocity = new Vector2(runspeed,rb2d.velocity.y);
+                            if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("player_runfire") && isGrounded && fireAnimDelay>0f){
+                                    fireAnimDelay -= Time.deltaTime;
+                            }
+                            else if (isGrounded) animator.Play("player_runfire");
+                            transform.eulerAngles = new Vector2(0,0);
                         }
-                        else if (isGrounded) animator.Play("player_runfire");
-                        transform.eulerAngles = new Vector2(0,0);
-                    }
-                    else if (Input.GetKey("a") || Input.GetKey("left")) {
+                }
+
+                else if (Input.GetKey("a") || Input.GetKey("left")) {
+                    if (!isDashing || dashRight) {
                         rb2d.velocity = new Vector2(-runspeed,rb2d.velocity.y);
                         if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("player_runfire") && isGrounded && fireAnimDelay>0f){
-                                fireAnimDelay -= Time.deltaTime;
+                            fireAnimDelay -= Time.deltaTime;
                         }
                         else if (isGrounded) animator.Play("player_runfire");
-                        transform.eulerAngles = new Vector2(0,180);
-                    }
+                            transform.eulerAngles = new Vector2(0,180);
+                        }                    
+                }
+
                     //checking if standing still
                     else {
                         if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("player_fire") && isGrounded && fireAnimDelay>0f){
                                 fireAnimDelay -= Time.deltaTime;
                         }
-                        else if (isGrounded) animator.Play("player_fire");
+                        else if (isGrounded && !isDashing) animator.Play("player_fire");
                         rb2d.velocity = new Vector2(0,rb2d.velocity.y);
                     }
                     fireframe -= Time.deltaTime; //reduces the firing frame delay by 1
@@ -209,6 +220,20 @@ public class PlayerController2D : MonoBehaviour
                 jumpsound.Play();
                 doubleJump = true;
             }
+            
+            /* 
+
+
+            if (Input.GetKeyDown("c")){
+                if (transform.eulerAngles == (0,0)) {
+                    dashRight = true;
+                }
+                else {
+                    dashRight = false;
+                }
+            }
+            */
+
         }
         else {
             if (Input.GetKeyDown("space") && isGrounded || Input.GetKeyDown("x")  && isGrounded || Input.GetKeyDown("up")  && isGrounded) {
