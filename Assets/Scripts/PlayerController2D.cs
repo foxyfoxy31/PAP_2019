@@ -28,6 +28,7 @@ public class PlayerController2D : MonoBehaviour
     public float InvincibleDuration;
     public GameObject djParticle;
 
+
     /*
 
 
@@ -48,6 +49,7 @@ public class PlayerController2D : MonoBehaviour
     [SerializeField]    private float dashTime;
     private bool isDashing;
     private bool dashRight;
+
 
     /*
 
@@ -143,8 +145,8 @@ public class PlayerController2D : MonoBehaviour
                             fireAnimDelay -= Time.deltaTime;
                         }
                         else if (isGrounded) animator.Play("player_runfire");
-                            transform.eulerAngles = new Vector2(0,180);
-                        }                    
+                        transform.eulerAngles = new Vector2(0,180);
+                    }                    
                 }
 
                     //checking if standing still
@@ -153,7 +155,9 @@ public class PlayerController2D : MonoBehaviour
                                 fireAnimDelay -= Time.deltaTime;
                         }
                         else if (isGrounded && !isDashing) animator.Play("player_fire");
+                        if (!isDashing) {
                         rb2d.velocity = new Vector2(0,rb2d.velocity.y);
+                        }
                     }
                     fireframe -= Time.deltaTime; //reduces the firing frame delay by 1
         }
@@ -166,27 +170,35 @@ public class PlayerController2D : MonoBehaviour
 
 
         if (Input.GetKey("d") || Input.GetKey("right")) {
-            rb2d.velocity = new Vector2(runspeed,rb2d.velocity.y);
-            if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("player_runfire") && isGrounded && fireAnimDelay>0f){
-            fireAnimDelay -= Time.deltaTime;
+            if (!isDashing || !dashRight) {
+                isDashing = false;
+                rb2d.velocity = new Vector2(runspeed,rb2d.velocity.y);
+                if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("player_runfire") && isGrounded && fireAnimDelay>0f){
+                fireAnimDelay -= Time.deltaTime;
+                }
+                else if (isGrounded) animator.Play("player_run");
+                transform.eulerAngles = new Vector2(0,0);
             }
-            else if (isGrounded) animator.Play("player_run");
-            transform.eulerAngles = new Vector2(0,0);
         }
         else if (Input.GetKey("a") || Input.GetKey("left")) {
-            rb2d.velocity = new Vector2(-runspeed,rb2d.velocity.y);
-            if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("player_runfire") && isGrounded && fireAnimDelay>0f){
-            fireAnimDelay -= Time.deltaTime;
+            if (!isDashing || dashRight) {
+                isDashing = false;
+                rb2d.velocity = new Vector2(-runspeed,rb2d.velocity.y);
+                if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("player_runfire") && isGrounded && fireAnimDelay>0f){
+                fireAnimDelay -= Time.deltaTime;
+                }
+                else if (isGrounded) animator.Play("player_run");
+                transform.eulerAngles = new Vector2(0,180);
             }
-            else if (isGrounded) animator.Play("player_run");
-            transform.eulerAngles = new Vector2(0,180);
         }
         else {
             if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("player_fire") && isGrounded && fireAnimDelay>0f){
             fireAnimDelay -= Time.deltaTime;
             }
             else if (isGrounded) animator.Play("player_idle");
-            rb2d.velocity = new Vector2(0,rb2d.velocity.y);
+            if (!isDashing) {
+                rb2d.velocity = new Vector2(0,rb2d.velocity.y);
+            }
         }
         }
 
@@ -208,31 +220,24 @@ public class PlayerController2D : MonoBehaviour
 
 
     private void Update() {  // updates every frame
-         if (fireframe > 0f) {
+
+        if(dashTime > 0) dashTime = dashTime - Time.deltaTime;
+        else isDashing = false;
+
+
+        if (fireframe > 0f) {
+
             if (Input.GetKeyDown("space") && isGrounded || Input.GetKeyDown("x")  && isGrounded || Input.GetKeyDown("up")  && isGrounded) {
-                        rb2d.velocity = new Vector2(rb2d.velocity.x, jumpspeed);
-                        animator.Play("player_jumpfire");
-                        jumpsound.Play();
-                    } 
+                rb2d.velocity = new Vector2(rb2d.velocity.x, jumpspeed);
+                animator.Play("player_jumpfire");
+                jumpsound.Play();
+            } 
             if (Input.GetKeyDown("space") && !doubleJump && !isGrounded || Input.GetKeyDown("x") && !doubleJump && !isGrounded || Input.GetKeyDown("up") && !doubleJump && !isGrounded) {
                 rb2d.velocity = new Vector2(rb2d.velocity.x, jumpspeed - 1f);
                 Instantiate(djParticle, transform.position, transform.rotation);
                 jumpsound.Play();
                 doubleJump = true;
             }
-            
-            /* 
-
-
-            if (Input.GetKeyDown("c")){
-                if (transform.eulerAngles == (0,0)) {
-                    dashRight = true;
-                }
-                else {
-                    dashRight = false;
-                }
-            }
-            */
 
         }
         else {
@@ -254,6 +259,23 @@ public class PlayerController2D : MonoBehaviour
                 fireAnimDelay = 0.5f; //frame delay for animation
                 Instantiate(bullet, firePoint.position, firePoint.rotation);
             }
+
+            if ( Input.GetKeyDown("c") && !isDashing && dashTime <= 0) {
+                animator.Play("player_dash");
+                dashTime = startDashTime;
+                if (transform.eulerAngles == new Vector3(0,0,0)) {
+                    dashRight = true;
+                    isDashing = true;
+                    rb2d.velocity = new Vector2(dashSpeed,rb2d.velocity.y);
+
+                }
+                else {
+                    dashRight = false;
+                    isDashing = true;
+                    rb2d.velocity = new Vector2(-dashSpeed,rb2d.velocity.y);
+                }
+            }
+
         }
     }
 
