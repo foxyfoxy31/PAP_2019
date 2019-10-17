@@ -104,17 +104,22 @@ public class PlayerController2D : MonoBehaviour
         }
         else {
             isGrounded = false;
-            if (!doubleJump) {
-                if (fireframe > 0f) animator.Play("player_jumpfire"); //check if player is airborne and is firing projectile
-                else animator.Play("player_jump"); //regular jump animation
-            }
-            else {
-                if (fireframe > 0f) {
-                    animator.Play("player_doublejumpfire");
+            if (!isDashing) {
+                if (!doubleJump) {
+                    if (fireframe > 0f) animator.Play("player_jumpfire"); //check if player is airborne and is firing projectile
+                    else animator.Play("player_jump"); //regular jump animation
                 }
                 else {
-                    animator.Play("player_doublejump");
+                    if (fireframe > 0f) {
+                        animator.Play("player_doublejumpfire");
+                    }
+                    else {
+                        animator.Play("player_doublejump");
+                    }
                 }
+            }
+            else {
+                animator.Play("player_dash");
             }
         }
 
@@ -151,13 +156,13 @@ public class PlayerController2D : MonoBehaviour
 
                     //checking if standing still
                     else {
-                        if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("player_fire") && isGrounded && fireAnimDelay>0f){
-                                fireAnimDelay -= Time.deltaTime;
-                        }
-                        else if (isGrounded && !isDashing) animator.Play("player_fire");
                         if (!isDashing) {
-                        rb2d.velocity = new Vector2(0,rb2d.velocity.y);
-                        }
+                            if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("player_fire") && isGrounded && fireAnimDelay>0f){
+                                fireAnimDelay -= Time.deltaTime;
+                            }
+                            if (isGrounded) animator.Play("player_fire");
+                            rb2d.velocity = new Vector2(0,rb2d.velocity.y);
+                            }
                     }
                     fireframe -= Time.deltaTime; //reduces the firing frame delay by 1
         }
@@ -192,12 +197,15 @@ public class PlayerController2D : MonoBehaviour
             }
         }
         else {
-            if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("player_fire") && isGrounded && fireAnimDelay>0f){
-            fireAnimDelay -= Time.deltaTime;
-            }
-            else if (isGrounded) animator.Play("player_idle");
             if (!isDashing) {
+                if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("player_fire") && isGrounded && fireAnimDelay>0f){
+                    fireAnimDelay -= Time.deltaTime;
+                }
+                else if (isGrounded) animator.Play("player_idle");
                 rb2d.velocity = new Vector2(0,rb2d.velocity.y);
+            }
+            else {
+                animator.Play("player_dash");
             }
         }
         }
