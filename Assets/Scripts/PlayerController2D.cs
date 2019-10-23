@@ -27,6 +27,7 @@ public class PlayerController2D : MonoBehaviour
     public bool Invincible;
     public float InvincibleDuration;
     public GameObject djParticle;
+    public GameObject dashParticle;
 
 
     /*
@@ -119,7 +120,12 @@ public class PlayerController2D : MonoBehaviour
                 }
             }
             else {
-                animator.Play("player_dash");
+                if (fireframe > 0f) {
+                        animator.Play("player_dashfire");
+                    }
+                    else {
+                        animator.Play("player_dash");
+                    }                
             }
         }
 
@@ -141,6 +147,14 @@ public class PlayerController2D : MonoBehaviour
                             else if (isGrounded) animator.Play("player_runfire");
                             transform.eulerAngles = new Vector2(0,0);
                         }
+                        else {
+                            if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("player_dashfire") && fireAnimDelay>0f){
+                                fireAnimDelay -= Time.deltaTime;
+                            }
+                            else {
+                                animator.Play("player_dashfire");
+                            }
+                        }
                 }
 
                 else if (Input.GetKey("a") || Input.GetKey("left")) {
@@ -151,20 +165,38 @@ public class PlayerController2D : MonoBehaviour
                         }
                         else if (isGrounded) animator.Play("player_runfire");
                         transform.eulerAngles = new Vector2(0,180);
-                    }                    
+                    }
+                    else {
+                        if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("player_dashfire") && fireAnimDelay>0f){
+                            fireAnimDelay -= Time.deltaTime;
+                        }
+                        else {
+                            animator.Play("player_dashfire");
+                        }
+                        }                   
                 }
 
-                    //checking if standing still
-                    else {
-                        if (!isDashing) {
-                            if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("player_fire") && isGrounded && fireAnimDelay>0f){
-                                fireAnimDelay -= Time.deltaTime;
-                            }
-                            if (isGrounded) animator.Play("player_fire");
-                            rb2d.velocity = new Vector2(0,rb2d.velocity.y);
-                            }
+                //checking if standing still
+                else {
+                    if (!isDashing) {
+                        if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("player_fire") && isGrounded && fireAnimDelay>0f){
+                            fireAnimDelay -= Time.deltaTime;
+                        }
+                        if (isGrounded) animator.Play("player_fire");
+                        rb2d.velocity = new Vector2(0,rb2d.velocity.y);
                     }
-                    fireframe -= Time.deltaTime; //reduces the firing frame delay by 1
+                    else {
+                        if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("player_dashfire") && fireAnimDelay>0f){
+                            fireAnimDelay -= Time.deltaTime;
+                        }
+                        else {
+                            animator.Play("player_dashfire");
+                        }
+                        }
+
+                }
+
+                fireframe -= Time.deltaTime; //reduces the firing frame delay by 1
         }
 
 
@@ -270,6 +302,7 @@ public class PlayerController2D : MonoBehaviour
 
             if ( Input.GetKeyDown("c") && !isDashing && dashTime <= 0) {
                 animator.Play("player_dash");
+                Instantiate(dashParticle, transform.position, transform.rotation);
                 dashTime = startDashTime;
                 if (transform.eulerAngles == new Vector3(0,0,0)) {
                     dashRight = true;
