@@ -36,6 +36,10 @@ public class HealthManager : MonoBehaviour
         }
 
         text.text = "" + playerHealth;
+
+        if (maxPlayerHealth < playerHealth) {
+            playerHealth = maxPlayerHealth;
+        }
     }
 
     public static void HurtPlayer (int damageToGive) {
@@ -44,15 +48,6 @@ public class HealthManager : MonoBehaviour
 
     public void FullHealth() {
         playerHealth = maxPlayerHealth;
-    }
-
-    public void HealPlayer(int healAmount) {
-        if (playerHealth + healAmount > maxPlayerHealth) {
-            playerHealth = maxPlayerHealth;
-        }
-        else {
-            playerHealth = playerHealth + healAmount;
-        }
     }
 
 }
