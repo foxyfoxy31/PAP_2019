@@ -6,6 +6,8 @@ public class HealthPickup : MonoBehaviour
 {
     public int healthToGive;
 
+    public GameObject healthPickupParticle;
+
     private PlayerController2D player;
 
     // Start is called before the first frame update
@@ -24,6 +26,7 @@ public class HealthPickup : MonoBehaviour
         if (other.name == "lucas") {
             var player = other.GetComponent<PlayerController2D>();
             HealthManager.HurtPlayer(-healthToGive);
+            Instantiate(healthPickupParticle, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }    
