@@ -130,7 +130,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43d1cc071a866d846b065e9956187a59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthToGive: 3
-  hSound: {fileID: 0}
+  healthToGive: 4
   healthPickupParticle: {fileID: 5843054694132593438, guid: 72e551133e52406438e06e34ac2b556d,
     type: 3}
