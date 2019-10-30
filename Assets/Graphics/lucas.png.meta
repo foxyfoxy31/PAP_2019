@@ -148,7 +148,16 @@ TextureImporter:
     second: lucas_hurt
   - first:
       213: -1850363733428201762
-    second: lucas_1
+    second: lucas_sword2
+  - first:
+      213: -1042038247396554037
+    second: lucas_sword1
+  - first:
+      213: -8242155215880588586
+    second: lucas_sword3
+  - first:
+      213: -6412124146604206801
+    second: lucas_sword4
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -753,6 +762,90 @@ TextureImporter:
       bones: []
       spriteID: 5838b2d707f307f4d99bb86a9cea959d
       internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lucas_sword1
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 206
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.4375, y: 0.16666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8402638e4e557d4ca476b6baa541e37
+      internalID: -1042038247396554037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lucas_sword2
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 206
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.45833334, y: 0.16666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2faae168428186f4f9848d6ba5deb6e4
+      internalID: -1850363733428201762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lucas_sword3
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 206
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.4791667, y: 0.16666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1552e8437fd8a4d418e3d73c058e8d93
+      internalID: -8242155215880588586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lucas_sword4
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 206
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.4166667, y: 0.16666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4ed691366f736a42ac47b785a5606d5
+      internalID: -6412124146604206801
       vertices: []
       indices: 
       edges: []
