@@ -28,8 +28,12 @@ public class PlayerController2D : MonoBehaviour
     public float InvincibleDuration;
     public GameObject djParticle;
     public GameObject dashParticle;
+    public float startAttackFrame;
 
-
+    public Transform attackPos;
+    public float attackRange;
+    public LayerMask whatIsEnemies;
+    public int attackDamage;
     /*
 
 
@@ -50,6 +54,7 @@ public class PlayerController2D : MonoBehaviour
     [SerializeField]    private float dashTime;
     private bool isDashing;
     private bool dashRight;
+    private float attackFrame;
 
 
     /*
@@ -94,7 +99,12 @@ public class PlayerController2D : MonoBehaviour
         if (knockbackCount <= 0) {
         healthManager.enabled = true;
 
-
+        if (attackFrame <= 0) {
+            attackFrame = startAttackFrame;
+        }
+        else {
+            attackFrame = attackFrame - Time.deltaTime;
+        }
 
 
         if (Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground")) || 
@@ -240,6 +250,7 @@ public class PlayerController2D : MonoBehaviour
                 animator.Play("player_dash");
             }
         }
+
         }
 
 
@@ -317,6 +328,13 @@ public class PlayerController2D : MonoBehaviour
                 }
             }
 
+            if (Input.GetKey("v") && attackFrame <= 0) {
+               Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
+               for (int i = 0; i < enemiesToDamage.Length; i++) {
+                   enemiesToDamage[i].GetComponent<EnemyHealthManager>().giveDamage(attackDamage);
+               }
+            }
+            
         }
     }
 
@@ -350,4 +368,10 @@ public class PlayerController2D : MonoBehaviour
         StartCoroutine(FlashSprite());
         gameObject.layer = 13;
     }
+
+    void OnDrawGizmosSelected() {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPos.position, attackRange);
+    }
+
 }
