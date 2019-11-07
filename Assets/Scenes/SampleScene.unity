@@ -4454,7 +4454,7 @@ PrefabInstance:
     - target: {fileID: 7853891259942439538, guid: d1fbf04505100e0478591e05225061f7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 50
+      value: 49
       objectReference: {fileID: 0}
     - target: {fileID: 7853891259942439538, guid: d1fbf04505100e0478591e05225061f7,
         type: 3}
@@ -56429,7 +56429,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.6
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -56482,14 +56482,14 @@ MonoBehaviour:
   knockback: 2
   knockbackLength: 0.4
   knockbackCount: 0
-  knockFromRight: 0
+  knockFromRight: 1
   Invincible: 0
   InvincibleDuration: 2
   djParticle: {fileID: 2057389896228136047, guid: e1d08a0a479071e4e99677a4705f3101,
     type: 3}
   dashParticle: {fileID: 7509388524188281371, guid: 944a99884e54d4d4b8bd908c95713ddf,
     type: 3}
-  startAttackFrame: 0.3
+  startAttackFrame: 0.7
   attackPos: {fileID: 2002872082}
   attackRange: 0.49
   whatIsEnemies:
@@ -56500,6 +56500,8 @@ MonoBehaviour:
   dashSpeed: 4.8
   startDashTime: 0.4
   dashTime: 0.4
+  attackFrame: 0
+  isAttacking: 0
   groundCheck: {fileID: 2065105164}
   groundCheckL: {fileID: 552253467}
   groundCheckR: {fileID: 1308512022}

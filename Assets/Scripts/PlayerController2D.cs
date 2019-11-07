@@ -54,7 +54,10 @@ public class PlayerController2D : MonoBehaviour
     [SerializeField]    private float dashTime;
     private bool isDashing;
     private bool dashRight;
-    private float attackFrame;
+
+    [SerializeField] private float attackFrame;
+
+    [SerializeField] private bool isAttacking;
 
 
     /*
@@ -99,11 +102,13 @@ public class PlayerController2D : MonoBehaviour
         if (knockbackCount <= 0) {
         healthManager.enabled = true;
 
-        if (attackFrame <= 0) {
+        if (attackFrame <= 0 && isAttacking) {
             attackFrame = startAttackFrame;
+            isAttacking = false;
         }
-        else {
+        else if (isAttacking) {
             attackFrame = attackFrame - Time.deltaTime;
+            isAttacking = true;
         }
 
 
@@ -243,6 +248,9 @@ public class PlayerController2D : MonoBehaviour
                 if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("player_fire") && isGrounded && fireAnimDelay>0f){
                     fireAnimDelay -= Time.deltaTime;
                 }
+                else if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("player_sword") && isGrounded && isAttacking){
+                            attackFrame -= Time.deltaTime;
+                }
                 else if (isGrounded) animator.Play("player_idle");
                 rb2d.velocity = new Vector2(0,rb2d.velocity.y);
             }
@@ -328,11 +336,13 @@ public class PlayerController2D : MonoBehaviour
                 }
             }
 
-            if (Input.GetKey("v") && attackFrame <= 0) {
+            if (Input.GetKeyDown("v") && !isAttacking) {
+               isAttacking = true;
                Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
                for (int i = 0; i < enemiesToDamage.Length; i++) {
                    enemiesToDamage[i].GetComponent<EnemyHealthManager>().giveDamage(attackDamage);
                }
+               animator.Play("player_sword");
             }
             
         }
