@@ -34,6 +34,8 @@ public class PlayerController2D : MonoBehaviour
     public float attackRange;
     public LayerMask whatIsEnemies;
     public int attackDamage;
+
+    public float startAttackCancelFrame;
     /*
 
 
@@ -54,10 +56,12 @@ public class PlayerController2D : MonoBehaviour
     [SerializeField]    private float dashTime;
     private bool isDashing;
     private bool dashRight;
+    private float attackFrame;
+    private bool isAttacking;
+    private bool canCancel = true;
 
-    [SerializeField] private float attackFrame;
+    private float attackCancelFrame;
 
-    [SerializeField] private bool isAttacking;
 
 
     /*
@@ -95,6 +99,7 @@ public class PlayerController2D : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         healthManager = FindObjectOfType<HealthManager>();
+        attackFrame = startAttackFrame;
     }
 
 
@@ -103,14 +108,20 @@ public class PlayerController2D : MonoBehaviour
         healthManager.enabled = true;
 
         if (attackFrame <= 0 && isAttacking) {
+            attackCancelFrame = startAttackCancelFrame;
             attackFrame = startAttackFrame;
             isAttacking = false;
+            canCancel = true;
         }
         else if (isAttacking) {
             attackFrame = attackFrame - Time.deltaTime;
+            attackCancelFrame = attackCancelFrame - Time.deltaTime;
             isAttacking = true;
         }
 
+        if (attackCancelFrame <= 0) {
+            canCancel = true;
+        }
 
         if (Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground")) || 
         Physics2D.Linecast(transform.position, groundCheckL.position, 1 << LayerMask.NameToLayer("Ground")) || 
@@ -120,27 +131,34 @@ public class PlayerController2D : MonoBehaviour
         }
         else {
             isGrounded = false;
-            if (!isDashing) {
-                if (!doubleJump) {
-                    if (fireframe > 0f) animator.Play("player_jumpfire"); //check if player is airborne and is firing projectile
-                    else animator.Play("player_jump"); //regular jump animation
-                }
-                else {
-                    if (fireframe > 0f) {
-                        animator.Play("player_doublejumpfire");
-                    }
-                    else {
-                        animator.Play("player_doublejump");
-                    }
+            if (isAttacking) {
+                if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("player_sword_air")){
+                            fireAnimDelay -= Time.deltaTime;
                 }
             }
             else {
-                if (fireframe > 0f) {
-                        animator.Play("player_dashfire");
+                if (!isDashing) {
+                    if (!doubleJump) {
+                        if (fireframe > 0f) animator.Play("player_jumpfire"); //check if player is airborne and is firing projectile
+                        else animator.Play("player_jump"); //regular jump animation
                     }
                     else {
-                        animator.Play("player_dash");
-                    }                
+                        if (fireframe > 0f) {
+                            animator.Play("player_doublejumpfire");
+                        }
+                        else {
+                            animator.Play("player_doublejump");
+                        }
+                    }
+                }
+                else {
+                    if (fireframe > 0f) {
+                            animator.Play("player_dashfire");
+                        }
+                        else {
+                            animator.Play("player_dash");
+                        }                
+                }
             }
         }
 
@@ -149,7 +167,7 @@ public class PlayerController2D : MonoBehaviour
 
 
 
-        if (fireframe > 0f) {
+        if (fireframe > 0f && canCancel) {
 
 
                 //checking if player is running and firing @ the same time
@@ -217,7 +235,7 @@ public class PlayerController2D : MonoBehaviour
 
 
 
-        else {
+        else if (canCancel) {
             //regular run checks
 
 
@@ -251,8 +269,11 @@ public class PlayerController2D : MonoBehaviour
                 else if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("player_sword") && isGrounded && isAttacking){
                             attackFrame -= Time.deltaTime;
                 }
-                else if (isGrounded) animator.Play("player_idle");
+                else if (isGrounded && canCancel) animator.Play("player_idle");
                 rb2d.velocity = new Vector2(0,rb2d.velocity.y);
+            }
+            else if (isAttacking) {
+                
             }
             else {
                 animator.Play("player_dash");
@@ -284,7 +305,7 @@ public class PlayerController2D : MonoBehaviour
         else isDashing = false;
 
 
-        if (fireframe > 0f) {
+        if (fireframe > 0f && canCancel) {
 
             if (Input.GetKeyDown("space") && isGrounded || Input.GetKeyDown("x")  && isGrounded || Input.GetKeyDown("up")  && isGrounded) {
                 rb2d.velocity = new Vector2(rb2d.velocity.x, jumpspeed);
@@ -299,14 +320,14 @@ public class PlayerController2D : MonoBehaviour
             }
 
         }
-        else {
+        else if (canCancel) {
             if (Input.GetKeyDown("space") && isGrounded || Input.GetKeyDown("x")  && isGrounded || Input.GetKeyDown("up")  && isGrounded) {
             rb2d.velocity = new Vector2(rb2d.velocity.x, jumpspeed);
             animator.Play("player_jump");
             jumpsound.Play();
         }
 
-            if (Input.GetKeyDown("space") && !doubleJump && !isGrounded || Input.GetKeyDown("x") && !doubleJump && !isGrounded || Input.GetKeyDown("up") && !doubleJump && !isGrounded) {
+            if (Input.GetKeyDown("space") && !doubleJump && !isGrounded && !isAttacking || Input.GetKeyDown("x") && !doubleJump && !isGrounded && !isAttacking || Input.GetKeyDown("up") && !doubleJump && !isGrounded && !isAttacking) {
                 rb2d.velocity = new Vector2(rb2d.velocity.x, jumpspeed - 1f);
                 jumpsound.Play();
                                 Instantiate(djParticle, transform.position, transform.rotation);
@@ -342,7 +363,15 @@ public class PlayerController2D : MonoBehaviour
                for (int i = 0; i < enemiesToDamage.Length; i++) {
                    enemiesToDamage[i].GetComponent<EnemyHealthManager>().giveDamage(attackDamage);
                }
-               animator.Play("player_sword");
+               if (isGrounded) {
+                   canCancel = false;
+                   animator.Play("player_sword");
+                   rb2d.velocity = new Vector2(0,0);
+               }
+               else {
+                canCancel = true;
+                animator.Play("player_sword_air");
+               }
             }
             
         }

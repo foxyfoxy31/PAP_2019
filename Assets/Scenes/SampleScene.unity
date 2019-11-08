@@ -56429,7 +56429,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.6
+  m_AngularDrag: 0
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -56489,19 +56489,18 @@ MonoBehaviour:
     type: 3}
   dashParticle: {fileID: 7509388524188281371, guid: 944a99884e54d4d4b8bd908c95713ddf,
     type: 3}
-  startAttackFrame: 0.7
+  startAttackFrame: 0.6
   attackPos: {fileID: 2002872082}
-  attackRange: 0.49
+  attackRange: 0.47
   whatIsEnemies:
     serializedVersion: 2
     m_Bits: 4096
   attackDamage: 3
+  startAttackCancelFrame: 0.2
   jumpspeed: 5.4
   dashSpeed: 4.8
   startDashTime: 0.4
   dashTime: 0.4
-  attackFrame: 0
-  isAttacking: 0
   groundCheck: {fileID: 2065105164}
   groundCheckL: {fileID: 552253467}
   groundCheckR: {fileID: 1308512022}
@@ -57240,7 +57239,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2002872081}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.362, y: 0.175, z: 0}
+  m_LocalPosition: {x: 0.229, y: 0.175, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1792799646}
