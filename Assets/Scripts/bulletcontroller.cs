@@ -33,7 +33,7 @@ public class bulletcontroller : MonoBehaviour
             //Instantiate(enemyDeathEffect, other.transform.position, other.transform.rotation);
             //Destroy(other.gameObject);
 
-            other.GetComponent<EnemyHealthManager>().giveDamage(damageToGive);
+            other.GetComponent<EnemyHealthManager>().giveDamage(damageToGive, 0.05f);
             
         }
         Instantiate(impactParticle, transform.position, transform.rotation);

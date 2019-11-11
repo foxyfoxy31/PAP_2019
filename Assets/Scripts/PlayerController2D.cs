@@ -361,7 +361,7 @@ public class PlayerController2D : MonoBehaviour
                isAttacking = true;
                Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
                for (int i = 0; i < enemiesToDamage.Length; i++) {
-                   enemiesToDamage[i].GetComponent<EnemyHealthManager>().giveDamage(attackDamage);
+                   enemiesToDamage[i].GetComponent<EnemyHealthManager>().giveDamage(attackDamage, 0.3f);
                }
                if (isGrounded) {
                    canCancel = false;
