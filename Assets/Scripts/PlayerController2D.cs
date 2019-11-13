@@ -36,6 +36,8 @@ public class PlayerController2D : MonoBehaviour
     public int attackDamage;
 
     public float startAttackCancelFrame;
+
+    public AudioSource swordSound;
     /*
 
 
@@ -360,6 +362,7 @@ public class PlayerController2D : MonoBehaviour
             if (Input.GetKeyDown("v") && !isAttacking) {
                isAttacking = true;
                Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
+               swordSound.Play();
                for (int i = 0; i < enemiesToDamage.Length; i++) {
                    enemiesToDamage[i].GetComponent<EnemyHealthManager>().giveDamage(attackDamage, 0.3f);
                }
