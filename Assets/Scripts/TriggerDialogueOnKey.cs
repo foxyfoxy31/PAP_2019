@@ -12,7 +12,7 @@ public class TriggerDialogueOnKey : MonoBehaviour
                 gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
                 dialogueTriggered = true;
             }
-            else if (Input.GetKeyUp("m")) {
+            else if (Input.GetKeyDown("m")) {
                 FindObjectOfType<DialogueManager>().DisplayNextSentence();
             }
             else if (FindObjectOfType<PlayerController2D>().enabled == true) {
