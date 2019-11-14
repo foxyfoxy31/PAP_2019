@@ -102,6 +102,7 @@ public class PlayerController2D : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         healthManager = FindObjectOfType<HealthManager>();
         attackFrame = startAttackFrame;
+        attackCancelFrame = startAttackCancelFrame;
     }
 
 
