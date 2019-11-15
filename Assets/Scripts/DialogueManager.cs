@@ -17,9 +17,24 @@ public class DialogueManager : MonoBehaviour
         player = FindObjectOfType<PlayerController2D>();
     }
 
-    public void StartDialogue (Dialogue dialogue) {
+    public void StartDialogue (Dialogue dialogue, bool playerleft, string animation) {
+
+        if (playerleft) {
+
+        }
 
         player.rb2d.velocity = new Vector2 (0, 0);
+
+        if (playerleft) {
+            player.transform.position = new Vector2 (player.transform.position.x - 0.05f, player.transform.position.y);
+            player.transform.eulerAngles = new Vector2(0,180);
+        }
+        else {
+            player.transform.position = new Vector2 (player.transform.position.x + 0.05f, player.transform.position.y);
+            transform.eulerAngles = new Vector2(0,0);
+        }
+
+        player.animator.Play(animation);
 
         player.enabled = false; 
 

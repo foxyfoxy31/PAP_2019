@@ -218,7 +218,9 @@ public class PlayerController2D : MonoBehaviour
                         if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("player_fire") && isGrounded && fireAnimDelay>0f){
                             fireAnimDelay -= Time.deltaTime;
                         }
-                        if (isGrounded) animator.Play("player_fire");
+                        if (isGrounded) {
+                            animator.Play("player_fire");
+                        }
                         rb2d.velocity = new Vector2(0,rb2d.velocity.y);
                     }
                     else {
@@ -272,7 +274,9 @@ public class PlayerController2D : MonoBehaviour
                 else if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("player_sword") && isGrounded && isAttacking){
                             attackFrame -= Time.deltaTime;
                 }
-                else if (isGrounded && canCancel) animator.Play("player_idle");
+                else if (isGrounded && canCancel) {
+                    animator.Play("player_idle");
+                }
                 rb2d.velocity = new Vector2(0,rb2d.velocity.y);
             }
             else if (isAttacking) {
