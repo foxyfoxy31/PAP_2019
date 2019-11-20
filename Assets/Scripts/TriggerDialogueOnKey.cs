@@ -11,6 +11,8 @@ public class TriggerDialogueOnKey : MonoBehaviour
     public string animation;
     private bool CR_running = false;
 
+    public GameObject talkPoint;
+
     private void OnTriggerStay2D(Collider2D other) {
         if (other.gameObject.name == "lucas") {
             if (!CR_running) {
@@ -22,7 +24,7 @@ public class TriggerDialogueOnKey : MonoBehaviour
     IEnumerator dialogueKey() {
         CR_running = true;
         if(Input.GetKeyDown("m") && !dialogueTriggered) {
-            gameObject.GetComponent<DialogueTrigger>().TriggerDialogue(playerleft, animation);
+            gameObject.GetComponent<DialogueTrigger>().TriggerDialogue(playerleft, animation, talkPoint);
             dialogueTriggered = true;
             yield return new WaitForSeconds(0.5f);
         }
@@ -30,7 +32,7 @@ public class TriggerDialogueOnKey : MonoBehaviour
             FindObjectOfType<DialogueManager>().DisplayNextSentence();
             yield return new WaitForSeconds(0.5f);
         }
-        else if (FindObjectOfType<PlayerController2D>().enabled == true) {
+        else if (FindObjectOfType<PlayerController2D>().lockControls == false) {
             dialogueTriggered = false;
         }
         CR_running = false;

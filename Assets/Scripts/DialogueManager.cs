@@ -17,26 +17,37 @@ public class DialogueManager : MonoBehaviour
         player = FindObjectOfType<PlayerController2D>();
     }
 
-    public void StartDialogue (Dialogue dialogue, bool playerleft, string animation) {
-
-        if (playerleft) {
-
-        }
+    public void StartDialogue (Dialogue dialogue, bool playerleft, string animation, GameObject talkPoint) {
 
         player.rb2d.velocity = new Vector2 (0, 0);
 
+        player.animator.Play("player_run");
+
+        while (player.transform.position.x != talkPoint.transform.position.x) {
+        if (player.transform.position.x < talkPoint.transform.position.x) {
+            transform.eulerAngles = new Vector2(0,0);
+        }
+        else {
+            transform.eulerAngles = new Vector2(0,180);
+        }
+
+        player.transform.position = Vector2.MoveTowards(player.transform.position, talkPoint.transform.position, (0.3f*Time.deltaTime));
+
+        }
+
         if (playerleft) {
-            player.transform.position = new Vector2 (player.transform.position.x - 0.05f, player.transform.position.y);
             player.transform.eulerAngles = new Vector2(0,180);
         }
         else {
-            player.transform.position = new Vector2 (player.transform.position.x + 0.05f, player.transform.position.y);
-            transform.eulerAngles = new Vector2(0,0);
+            player.transform.eulerAngles = new Vector2(0,0);
         }
 
         player.animator.Play(animation);
 
-        player.enabled = false; 
+        player.rb2d.velocity = new Vector2 (0, 0);
+
+        player.lockControls = true;
+        
 
         animator.SetBool("isOpen", true);
 
@@ -69,6 +80,7 @@ public class DialogueManager : MonoBehaviour
             yield return null;
         }
     }
+
     void EndDialogue() {
         animator.SetBool("isOpen", false);
         player.enabled = true; 

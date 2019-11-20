@@ -38,6 +38,8 @@ public class PlayerController2D : MonoBehaviour
     public float startAttackCancelFrame;
 
     public AudioSource swordSound;
+
+    public bool lockControls = false;
     /*
 
 
@@ -170,7 +172,7 @@ public class PlayerController2D : MonoBehaviour
 
 
 
-        if (fireframe > 0f && canCancel) {
+        if (fireframe > 0f && canCancel && !lockControls) {
 
 
                 //checking if player is running and firing @ the same time
@@ -240,7 +242,7 @@ public class PlayerController2D : MonoBehaviour
 
 
 
-        else if (canCancel) {
+        else if (canCancel && !lockControls) {
             //regular run checks
 
 
@@ -312,7 +314,7 @@ public class PlayerController2D : MonoBehaviour
         else isDashing = false;
 
 
-        if (fireframe > 0f && canCancel) {
+        if (fireframe > 0f && canCancel  && !lockControls) {
 
             if (Input.GetKeyDown("space") && isGrounded || Input.GetKeyDown("x")  && isGrounded || Input.GetKeyDown("up")  && isGrounded) {
                 rb2d.velocity = new Vector2(rb2d.velocity.x, jumpspeed);
@@ -327,7 +329,7 @@ public class PlayerController2D : MonoBehaviour
             }
 
         }
-        else if (canCancel) {
+        else if (canCancel && !lockControls) {
             if (Input.GetKeyDown("space") && isGrounded || Input.GetKeyDown("x")  && isGrounded || Input.GetKeyDown("up")  && isGrounded) {
             rb2d.velocity = new Vector2(rb2d.velocity.x, jumpspeed);
             animator.Play("player_jump");
