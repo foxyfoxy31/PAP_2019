@@ -8,6 +8,8 @@ public class DialogueManager : MonoBehaviour
     public Text nameText;
     public Text dialogueText;
 
+    public AudioSource lettersound;
+
     public Image avatarFace;
 
     public GameObject teleportParticle;
@@ -74,8 +76,17 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator TypeSentence (string sentence) {
         dialogueText.text = "";
+        int i = 0;
         foreach (char letter in sentence.ToCharArray()) {
             dialogueText.text += letter;
+            if (i==0) {
+                i++;
+                lettersound.Play();
+            }
+            else if (i==2) {
+                i=0;
+            }
+            else i++;
             yield return null;
         }
     }
