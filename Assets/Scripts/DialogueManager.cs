@@ -8,6 +8,8 @@ public class DialogueManager : MonoBehaviour
     public Text nameText;
     public Text dialogueText;
 
+    public Image avatarFace;
+
     public GameObject teleportParticle;
     public Animator animator;
     private Queue<string> sentences; 
@@ -45,6 +47,8 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("isOpen", true);
 
         nameText.text = dialogue.name;
+
+        avatarFace.sprite = dialogue.npcAvatar;
 
         sentences.Clear();
 

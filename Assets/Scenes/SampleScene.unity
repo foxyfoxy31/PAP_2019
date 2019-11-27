@@ -2331,7 +2331,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.42339325, y: -5.0999994, z: -10}
+  m_LocalPosition: {x: 0.42333284, y: -5.0999994, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2455,6 +2455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 391172432}
   dialogueText: {fileID: 129176079}
+  avatarFace: {fileID: 697482405}
   teleportParticle: {fileID: 3188851148131718369, guid: 443cbcdda0c0fda4f898868b24fbbccf,
     type: 3}
   animator: {fileID: 1399669899}
@@ -2692,7 +2693,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 591628802}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.42339325, y: -5.0999994, z: -10}
+  m_LocalPosition: {x: 0.42333284, y: -5.0999994, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 719108481}
@@ -3026,9 +3027,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name: Kittz
+    npcAvatar: {fileID: -239286219781792923, guid: 2580fcef28c0bee479d06ac86e0eaf04,
+      type: 3}
     sentences:
-    - Hey!
-    - This is a test!
+    - 'Hey, Lucas!
+
+      You arrived just in time!'
+    - 'These robots are attacking
+
+      everyone!'
+    - 'We need to stop whoever is
+
+      behind this...'
+    - Go further into the facility.
+    - 'I''ll check out if more are
+
+      coming...'
 --- !u!61 &653358055
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3286,7 +3300,7 @@ MonoBehaviour:
   m_Sprite: {fileID: -4262871363266456803, guid: 2580fcef28c0bee479d06ac86e0eaf04,
     type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -4847,6 +4861,7 @@ GameObject:
   - component: {fileID: 1399669898}
   - component: {fileID: 1399669897}
   - component: {fileID: 1399669899}
+  - component: {fileID: 1399669900}
   m_Layer: 5
   m_Name: DialogueBox
   m_TagString: Untagged
@@ -4863,7 +4878,7 @@ RectTransform:
   m_GameObject: {fileID: 1399669895}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 391172431}
   - {fileID: 129176078}
@@ -4932,6 +4947,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1399669900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399669895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
+  m_EffectDistance: {x: 4, y: 4}
+  m_UseGraphicAlpha: 0
 --- !u!4 &1400164509 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3862821096767091344, guid: 9572e79623609c74ca1456790be82907,
