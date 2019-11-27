@@ -40,6 +40,8 @@ public class PlayerController2D : MonoBehaviour
     public AudioSource swordSound;
 
     public bool lockControls = false;
+
+    public bool lockPosition = false;
     /*
 
 
@@ -126,6 +128,10 @@ public class PlayerController2D : MonoBehaviour
 
         if (attackCancelFrame <= 0) {
             canCancel = true;
+        }
+
+        if (lockPosition) {
+            rb2d.velocity = new Vector2 (0, 0);
         }
 
         if (Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground")) || 

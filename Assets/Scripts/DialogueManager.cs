@@ -8,9 +8,11 @@ public class DialogueManager : MonoBehaviour
     public Text nameText;
     public Text dialogueText;
 
+    public GameObject teleportParticle;
     public Animator animator;
     private Queue<string> sentences; 
     private PlayerController2D player;
+    
     void Start()
     {
         sentences = new Queue<string>();
@@ -19,18 +21,12 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue (Dialogue dialogue, bool playerleft, string animation, GameObject talkPoint) {
 
-        player.rb2d.velocity = new Vector2 (0, 0);
+        if (player.transform.position != talkPoint.transform.position) {
+            player.transform.position = talkPoint.transform.position;
+            Instantiate(teleportParticle, player.transform.position, player.transform.rotation);
+        }        
 
-        while (player.transform.position.x != talkPoint.transform.position.x) {
-            if (player.transform.position.x < talkPoint.transform.position.x) {
-                transform.eulerAngles = new Vector2(0,0);
-                player.moveRight();
-            }
-            else {
-                transform.eulerAngles = new Vector2(0,180);
-                player.moveLeft();
-            }
-        }
+
         if (playerleft) {
             player.transform.eulerAngles = new Vector2(0,180);
         }
@@ -42,6 +38,8 @@ public class DialogueManager : MonoBehaviour
         player.animator.Play(animation);
 
         player.lockControls = true;
+
+        player.lockPosition = true;
         
 
         animator.SetBool("isOpen", true);
@@ -60,6 +58,8 @@ public class DialogueManager : MonoBehaviour
     public void DisplayNextSentence () {
         if (sentences.Count == 0) {
             EndDialogue();
+            player.lockControls = false;
+            player.lockPosition = false;
             return;
         }
 
