@@ -248,24 +248,12 @@ public class PlayerController2D : MonoBehaviour
 
         if (Input.GetKey("d") || Input.GetKey("right")) {
             if (!isDashing || !dashRight) {
-                isDashing = false;
-                rb2d.velocity = new Vector2(runspeed,rb2d.velocity.y);
-                if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("player_runfire") && isGrounded && fireAnimDelay>0f){
-                fireAnimDelay -= Time.deltaTime;
-                }
-                else if (isGrounded) animator.Play("player_run");
-                transform.eulerAngles = new Vector2(0,0);
+                moveRight();
             }
         }
         else if (Input.GetKey("a") || Input.GetKey("left")) {
             if (!isDashing || dashRight) {
-                isDashing = false;
-                rb2d.velocity = new Vector2(-runspeed,rb2d.velocity.y);
-                if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("player_runfire") && isGrounded && fireAnimDelay>0f){
-                fireAnimDelay -= Time.deltaTime;
-                }
-                else if (isGrounded) animator.Play("player_run");
-                transform.eulerAngles = new Vector2(0,180);
+                moveLeft();
             }
         }
         else {
@@ -422,5 +410,32 @@ public class PlayerController2D : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPos.position, attackRange);
     }
+
+
+
+
+    public void moveRight() {
+        isDashing = false;
+        rb2d.velocity = new Vector2(runspeed,rb2d.velocity.y);
+        if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("player_runfire") && isGrounded && fireAnimDelay>0f){
+        fireAnimDelay -= Time.deltaTime;
+        }
+        else if (isGrounded) animator.Play("player_run");
+        transform.eulerAngles = new Vector2(0,0);
+    }
+
+    public void moveLeft() {
+        isDashing = false;
+        rb2d.velocity = new Vector2(-runspeed,rb2d.velocity.y);
+        if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("player_runfire") && isGrounded && fireAnimDelay>0f){
+        fireAnimDelay -= Time.deltaTime;
+        }
+        else if (isGrounded) animator.Play("player_run");
+        transform.eulerAngles = new Vector2(0,180);
+    }
+
+
+
+
 
 }

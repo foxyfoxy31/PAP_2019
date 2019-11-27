@@ -21,20 +21,16 @@ public class DialogueManager : MonoBehaviour
 
         player.rb2d.velocity = new Vector2 (0, 0);
 
-        player.animator.Play("player_run");
-
         while (player.transform.position.x != talkPoint.transform.position.x) {
-        if (player.transform.position.x < talkPoint.transform.position.x) {
-            transform.eulerAngles = new Vector2(0,0);
+            if (player.transform.position.x < talkPoint.transform.position.x) {
+                transform.eulerAngles = new Vector2(0,0);
+                player.moveRight();
+            }
+            else {
+                transform.eulerAngles = new Vector2(0,180);
+                player.moveLeft();
+            }
         }
-        else {
-            transform.eulerAngles = new Vector2(0,180);
-        }
-
-        player.transform.position = Vector2.MoveTowards(player.transform.position, talkPoint.transform.position, (0.3f*Time.deltaTime));
-
-        }
-
         if (playerleft) {
             player.transform.eulerAngles = new Vector2(0,180);
         }
@@ -42,9 +38,8 @@ public class DialogueManager : MonoBehaviour
             player.transform.eulerAngles = new Vector2(0,0);
         }
 
-        player.animator.Play(animation);
 
-        player.rb2d.velocity = new Vector2 (0, 0);
+        player.animator.Play(animation);
 
         player.lockControls = true;
         
