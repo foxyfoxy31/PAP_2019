@@ -14,12 +14,18 @@ public class DialogueManager : MonoBehaviour
 
     public GameObject teleportParticle;
     public Animator animator;
-    private Queue<string> sentences; 
+    private Queue<string> sentences;
+    private Queue<string> names;
+    private Queue<Sprite> avatars;
+    private Queue<AudioSource> letterSounds; 
     private PlayerController2D player;
     
     void Start()
     {
         sentences = new Queue<string>();
+        names = new Queue<string>();
+        avatars = new Queue<Sprite>();
+        letterSounds = new Queue<AudioSource>();
         player = FindObjectOfType<PlayerController2D>();
     }
 
@@ -48,20 +54,22 @@ public class DialogueManager : MonoBehaviour
 
         animator.SetBool("isOpen", true);
 
-        nameText.text = dialogue.name;
-
-        avatarFace.sprite = dialogue.npcAvatar;
-
-        if (dialogue.letterSound != null) {
-            letterSound = dialogue.letterSound;
-        }
-
-        
-
         sentences.Clear();
 
         foreach (string sentence in dialogue.sentences) {
             sentences.Enqueue(sentence);
+        }
+
+        foreach (Sprite avatar in dialogue.npcAvatar) {
+            avatars.Enqueue(avatar);
+        }
+
+        foreach (string npcName in dialogue.name) {
+            names.Enqueue(npcName);
+        }
+
+        foreach (AudioSource ltrSnd in dialogue.letterSound) {
+            letterSounds.Enqueue(ltrSnd);
         }
 
         DisplayNextSentence();
@@ -76,7 +84,15 @@ public class DialogueManager : MonoBehaviour
         }
 
         string  sentence = sentences.Dequeue();
+        Sprite avatar = avatars.Dequeue();
+        string npcName = names.Dequeue();
+        AudioSource ltrSnd = letterSounds.Dequeue();
         StopAllCoroutines();
+        avatarFace.sprite = avatar;
+        nameText.text = npcName;
+        if (letterSound != null) {
+            letterSound = ltrSnd;
+        }
         StartCoroutine(TypeSentence(sentence));
     }
 

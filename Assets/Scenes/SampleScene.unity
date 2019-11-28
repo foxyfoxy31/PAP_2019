@@ -3125,10 +3125,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: Kittz
-    npcAvatar: {fileID: -239286219781792923, guid: 2580fcef28c0bee479d06ac86e0eaf04,
-      type: 3}
-    letterSound: {fileID: 653358060}
+    name:
+    - Kittz
+    - Kittz
+    - Kittz
+    - Kittz
+    - Kittz
+    npcAvatar:
+    - {fileID: -239286219781792923, guid: 2580fcef28c0bee479d06ac86e0eaf04, type: 3}
+    - {fileID: -239286219781792923, guid: 2580fcef28c0bee479d06ac86e0eaf04, type: 3}
+    - {fileID: 3511027699939074429, guid: 2580fcef28c0bee479d06ac86e0eaf04, type: 3}
+    - {fileID: -239286219781792923, guid: 2580fcef28c0bee479d06ac86e0eaf04, type: 3}
+    - {fileID: 3511027699939074429, guid: 2580fcef28c0bee479d06ac86e0eaf04, type: 3}
+    letterSound:
+    - {fileID: 653358060}
+    - {fileID: 653358060}
+    - {fileID: 653358060}
+    - {fileID: 653358060}
+    - {fileID: 653358060}
     sentences:
     - 'Hey, Lucas!
 
