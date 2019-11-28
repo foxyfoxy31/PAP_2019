@@ -8,7 +8,7 @@ public class DialogueManager : MonoBehaviour
     public Text nameText;
     public Text dialogueText;
 
-    public AudioSource lettersound;
+    public AudioSource letterSound;
 
     public Image avatarFace;
 
@@ -52,6 +52,12 @@ public class DialogueManager : MonoBehaviour
 
         avatarFace.sprite = dialogue.npcAvatar;
 
+        if (dialogue.letterSound != null) {
+            letterSound = dialogue.letterSound;
+        }
+
+        
+
         sentences.Clear();
 
         foreach (string sentence in dialogue.sentences) {
@@ -81,7 +87,7 @@ public class DialogueManager : MonoBehaviour
             dialogueText.text += letter;
             if (i==0) {
                 i++;
-                lettersound.Play();
+                letterSound.Play();
             }
             else if (i==2) {
                 i=0;
