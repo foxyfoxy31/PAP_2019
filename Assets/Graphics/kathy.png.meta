@@ -1,0 +1,319 @@
+fileFormatVersion: 2
+guid: a82e6768b64ed6444a5f6bafd7865add
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5458948906292971802
+    second: kathy_normal_idle
+  - first:
+      213: 2370316236240281745
+    second: kathy_idle1
+  - first:
+      213: 1833889271735041186
+    second: kathy_idle2
+  - first:
+      213: 9150818985590118257
+    second: kathy_idle3
+  - first:
+      213: 5369700208960968631
+    second: kathy_4
+  - first:
+      213: -7202739836155323748
+    second: kathy_glitchless_jump
+  - first:
+      213: -6637567216225843178
+    second: kathy_air
+  - first:
+      213: -6360590245302196592
+    second: kathy_air2
+  - first:
+      213: 6020712457353376124
+    second: kathy_air3
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 48
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: kathy_normal_idle
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 302
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5416667, y: 0.14583334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8fe9059a9771374e849591202162461
+      internalID: 5458948906292971802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kathy_idle1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 206
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.4791667, y: 0.14583334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 064cbdeda4ebafb4ca877d97b98151b6
+      internalID: 2370316236240281745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kathy_idle2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 206
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5416667, y: 0.14583334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5922f6a6562416845af5e5e803db405d
+      internalID: 1833889271735041186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kathy_idle3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 206
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5208334, y: 0.14583334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6edc6734d112204ea6a479c3ad34f67
+      internalID: 9150818985590118257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kathy_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 14
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f69644e502b46514aa66206e1e7a7651
+      internalID: 5369700208960968631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kathy_glitchless_jump
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 206
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5208334, y: 0.3125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37a26b267bb2fe145bc49e684880da29
+      internalID: -7202739836155323748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kathy_air
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 206
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5625, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7e70f1ee3ebb564cb778798c34b69ba
+      internalID: -6637567216225843178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kathy_air2
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 206
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5416667, y: 0.3541667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74485d109625db44bb2d943283b2da76
+      internalID: -6360590245302196592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kathy_air3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 206
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5416667, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41044214179ddd04aa24ca4a60cfbde1
+      internalID: 6020712457353376124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
