@@ -29,6 +29,33 @@ TextureImporter:
   - first:
       213: 6020712457353376124
     second: kathy_air3
+  - first:
+      213: 3203465761746452709
+    second: kathy_fire1
+  - first:
+      213: 5591706975818959870
+    second: kathy_fire2
+  - first:
+      213: -4299350432558603689
+    second: kathy_fire3
+  - first:
+      213: -7276160782860585093
+    second: kathy_orbglitch1
+  - first:
+      213: -5886055380237590039
+    second: kathy_orbglitch2
+  - first:
+      213: -6320000646502576743
+    second: kathy_orbglitch3
+  - first:
+      213: -3959386791215970322
+    second: kathy_orb1
+  - first:
+      213: -1980317097059377181
+    second: kathy_orb2
+  - first:
+      213: -994100801835816734
+    second: kathy_orb3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -297,6 +324,195 @@ TextureImporter:
       bones: []
       spriteID: 41044214179ddd04aa24ca4a60cfbde1
       internalID: 6020712457353376124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kathy_fire1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 158
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.4791667, y: 0.14583334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 899222c2475105a4d9e31c3950b7ca3a
+      internalID: 3203465761746452709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kathy_fire2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 158
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5416667, y: 0.14583334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e02c2ab888e46b4489650ed7a6ee6e8e
+      internalID: 5591706975818959870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kathy_fire3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 158
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5208334, y: 0.14583334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 777c2ae9a4740d942a7bc7605a81a8bc
+      internalID: -4299350432558603689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kathy_orbglitch1
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 302
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5208334, y: 0.5416667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87c1bfc7f43bda24594afdb3aa5273d4
+      internalID: -7276160782860585093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kathy_orbglitch2
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 302
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5208334, y: 0.5416667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf35c550de8ff6d49be4f3c80c400b6b
+      internalID: -5886055380237590039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kathy_orbglitch3
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 302
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5416667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e18c1ebe265b574dba0d04db65ad30c
+      internalID: -6320000646502576743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kathy_orb1
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 302
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fec954451d9b0004d8ae593487b9970d
+      internalID: -3959386791215970322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kathy_orb2
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 302
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69b5968821592f847b88b5d2746c0116
+      internalID: -1980317097059377181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kathy_orb3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 302
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4791667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 054a479193249c744b6859b08c0ebc7d
+      internalID: -994100801835816734
       vertices: []
       indices: 
       edges: []
