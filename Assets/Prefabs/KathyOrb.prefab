@@ -85,6 +85,7 @@ GameObject:
   - component: {fileID: 4752574224977579393}
   - component: {fileID: 78112591050138479}
   - component: {fileID: 6840369614169003997}
+  - component: {fileID: 7396453992225337756}
   m_Layer: 12
   m_Name: KathyOrb
   m_TagString: Untagged
@@ -228,8 +229,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: 1
-  rotateSpeed: 100
+  speed: 2
+  rotateSpeed: 175
 --- !u!50 &6840369614169003997
 Rigidbody2D:
   serializedVersion: 4
@@ -251,3 +252,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7396453992225337756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4088248439566036017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95ad189313a1d6d458e7d4f880ba827a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 4
