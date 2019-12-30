@@ -56,6 +56,15 @@ TextureImporter:
   - first:
       213: -994100801835816734
     second: kathy_orb3
+  - first:
+      213: 2325583171362855414
+    second: kathy_airfire1
+  - first:
+      213: -5084799473061628454
+    second: kathy_airfire2
+  - first:
+      213: -2199898235554529660
+    second: kathy_airfire3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -484,7 +493,7 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -513,6 +522,69 @@ TextureImporter:
       bones: []
       spriteID: 054a479193249c744b6859b08c0ebc7d
       internalID: -994100801835816734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kathy_airfire1
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 158
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5625, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47cc3df4f0f934b47b23b2df237ddc0f
+      internalID: 2325583171362855414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kathy_airfire2
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 158
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5416667, y: 0.3541667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dcb590eed4c839468623ce7fbe5fdee
+      internalID: -5084799473061628454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kathy_airfire3
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 158
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5416667, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fed9679aa4c753743b5bdc78335b9fbe
+      internalID: -2199898235554529660
       vertices: []
       indices: 
       edges: []

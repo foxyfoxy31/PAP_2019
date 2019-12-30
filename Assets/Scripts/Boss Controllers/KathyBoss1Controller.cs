@@ -9,6 +9,9 @@ public class KathyBoss1Controller : MonoBehaviour
     public GameObject orbAttack;
     public GameObject firePoint;
 
+    public float orbTimer;
+
+    private float currentOrbTimer;
     public int animationState;
 
 
@@ -54,8 +57,16 @@ public class KathyBoss1Controller : MonoBehaviour
     }
 
     void fireOrb () {
-        animator.Play("kathy_fire");
-        Instantiate(orbAttack, firePoint.transform.position, firePoint.transform.rotation);
+        if (currentOrbTimer <= 0f) {
+            currentOrbTimer = orbTimer;
+            animator.Play("kathy_fire");
+            Instantiate(orbAttack, firePoint.transform.position, firePoint.transform.rotation);
+        }
+        else {
+            while (currentOrbTimer > 0f) {
+                currentOrbTimer = currentOrbTimer - Time.deltaTime;
+            }
+        }
     }
 
 }

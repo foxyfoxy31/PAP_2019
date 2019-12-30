@@ -229,8 +229,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: 2
-  rotateSpeed: 175
+  speed: 2.2
+  rotateSpeed: 180
 --- !u!50 &6840369614169003997
 Rigidbody2D:
   serializedVersion: 4
@@ -264,4 +264,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95ad189313a1d6d458e7d4f880ba827a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 4
+  lifetime: 5

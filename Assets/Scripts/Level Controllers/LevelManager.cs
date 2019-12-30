@@ -45,6 +45,7 @@ public class LevelManager : MonoBehaviour
     public IEnumerator RespawnPlayerCo() {
         player.knockbackCount = 0;
         player.rb2d.velocity = new Vector2 (0, 0);
+        player.StopAllCoroutines();
         player.enabled = false;
         camera.isFollowing = false;
         gravityStore = player.rb2d.gravityScale;
