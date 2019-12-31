@@ -14,37 +14,43 @@ public class KathyBoss1Controller : MonoBehaviour
     private float currentOrbTimer;
     public int animationState;
 
+    private BossHealthManager bossHealthManager;
+
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
+        bossHealthManager = FindObjectOfType<BossHealthManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-         if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !animator.IsInTransition(0)) {
-             animationState = Random.Range(1, 4);
-             switch(animationState) {
-                case 1:
-                    idle();
-                break;
+        if (bossHealthManager.isDead == true) {
+            idle();
+        }
+        else if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !animator.IsInTransition(0)) {
+            animationState = Random.Range(1, 4);
+            switch(animationState) {
+            case 1:
+                idle();
+            break;
 
-                case 2:
-                    swoopAttack();
-                break;
+            case 2:
+                swoopAttack();
+            break;
 
-                case 3:
-                    fireOrb();
-                break;
+            case 3:
+                fireOrb();
+            break;
 
-                default:
-                    Debug.Log("Something went wrong! Number OO Range!");
-                break;
+            default:
+                Debug.Log("Something went wrong! Number OO Range!");
+            break;
 
-             }
-         }
+            }
+        }
     }
 
 

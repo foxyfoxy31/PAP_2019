@@ -33,6 +33,8 @@ public class PlayerController2D : MonoBehaviour
     public Transform attackPos;
     public float attackRange;
     public LayerMask whatIsEnemies;
+
+    public LayerMask whatIsBosses;
     public int attackDamage;
 
     public float startAttackCancelFrame;
@@ -42,6 +44,8 @@ public class PlayerController2D : MonoBehaviour
     public bool lockControls = false;
 
     public bool lockPosition = false;
+    
+
     /*
 
 
@@ -367,6 +371,10 @@ public class PlayerController2D : MonoBehaviour
                for (int i = 0; i < enemiesToDamage.Length; i++) {
                    enemiesToDamage[i].GetComponent<EnemyHealthManager>().giveDamage(attackDamage, 0.3f);
                }
+               Collider2D[] bossesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsBosses);
+               for (int i = 0; i < bossesToDamage.Length; i++) {
+                   FindObjectOfType<BossHealthManager>().giveDamage(attackDamage);
+               }
                if (isGrounded) {
                    canCancel = false;
                    animator.Play("player_sword");
@@ -388,7 +396,7 @@ public class PlayerController2D : MonoBehaviour
         Invincible = false;
         StopAllCoroutines();
         spriteRenderer.enabled = true;
-        gameObject.layer = 1;
+        gameObject.layer = 0;
     }
 
     

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6216273830286536472}
   - component: {fileID: 771424882705752501}
-  m_Layer: 12
+  m_Layer: 17
   m_Name: Point Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 78112591050138479}
   - component: {fileID: 6840369614169003997}
   - component: {fileID: 7396453992225337756}
-  m_Layer: 12
+  m_Layer: 17
   m_Name: KathyOrb
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -36,6 +36,13 @@ public class bulletcontroller : MonoBehaviour
             other.GetComponent<EnemyHealthManager>().giveDamage(damageToGive, 0.05f);
             
         }
+        if (other.tag == "Boss"){
+            //Instantiate(enemyDeathEffect, other.transform.position, other.transform.rotation);
+            //Destroy(other.gameObject);
+
+            FindObjectOfType<BossHealthManager>().giveDamage(damageToGive);
+            
+        }
         Instantiate(impactParticle, transform.position, transform.rotation);
         Destroy(gameObject);
     }
