@@ -117,4 +117,14 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("isOpen", false);
         player.enabled = true; 
     }
+
+    public bool canPlayerMove() {
+        if (player.lockControls == false || player.lockPosition == false) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
 }

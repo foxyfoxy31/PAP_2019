@@ -9,38 +9,59 @@ public class KathyBoss1Controller : BossController
 
     public float orbTimer;
 
+    public string animation;
+
+    public GameObject talkPoint;
+
     private float currentOrbTimer;
 
+    private DialogueTrigger dialogueTrigger;
+
+    private bool triggeredDialogue = false;
+
+    private DialogueManager dialogueManager;
+
+
+    public override void Start()
+    {
+        animator = GetComponent<Animator>();
+        bossHealthManager = FindObjectOfType<BossHealthManager>();
+        dialogueTrigger = GetComponent<DialogueTrigger>();
+        dialogueManager = FindObjectOfType<DialogueManager>();
+    }
 
     // Update is called once per frame
     void Update()
     {
 
         if (active) {
-            bossHealthManager.enabled = true;
-            if (bossHealthManager.isDead == true) {
-                idle();
-                active = false;
-            }
-            else if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !animator.IsInTransition(0)) {
-                animationState = Random.Range(1, 4);
-                switch(animationState) {
-                case 1:
+
+            if (triggeredDialogue) {
+                
+                bossHealthManager.enabled = true;
+                if (bossHealthManager.isDead == true) {
                     idle();
-                break;
+                    active = false;
+                }
+                else if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !animator.IsInTransition(0)) {
+                    animationState = Random.Range(1, 4);
+                    switch(animationState) {
+                        case 1:
+                            idle();
+                        break;
 
-                case 2:
-                    swoopAttack();
-                break;
+                        case 2:
+                            swoopAttack();
+                        break;
 
-                case 3:
-                    fireOrb();
-                break;
+                        case 3:
+                            fireOrb();
+                        break;
 
-                default:
-                    Debug.Log("Something went wrong! Number OO Range!");
-                break;
-
+                        default:
+                            Debug.Log("Something went wrong! Number OO Range!");
+                        break;
+                    }
                 }
             }
         }
@@ -52,6 +73,7 @@ public class KathyBoss1Controller : BossController
 
     public override void Trigger() {
         active = true;
+        StartCoroutine("dialogue");
         idle();
     }
 
@@ -76,6 +98,19 @@ public class KathyBoss1Controller : BossController
                 currentOrbTimer = currentOrbTimer - Time.deltaTime;
             }
         }
+    }
+
+    IEnumerator dialogue() {
+        dialogueTrigger.TriggerDialogue(false, animation, talkPoint);
+        yield return new WaitForSeconds(0.5f);
+        while (dialogueManager.canPlayerMove() == false) {
+            if (Input.GetKeyDown("m")) {
+                FindObjectOfType<DialogueManager>().DisplayNextSentence();
+                yield return new WaitForSeconds(0.5f);
+            }
+            yield return 0;
+        }
+        triggeredDialogue = true;
     }
 
 

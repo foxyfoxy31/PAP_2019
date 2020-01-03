@@ -13,7 +13,7 @@ public abstract class BossController : MonoBehaviour
     public bool active = false;
 
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
         animator = GetComponent<Animator>();
         bossHealthManager = FindObjectOfType<BossHealthManager>();
