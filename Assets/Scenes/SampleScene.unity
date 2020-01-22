@@ -2435,7 +2435,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 86.74333, y: -31.6, z: -10}
+  m_LocalPosition: {x: 0.25333285, y: -4.46, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2996,7 +2996,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 591628802}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 86.74333, y: -31.6, z: -10}
+  m_LocalPosition: {x: 0.25333285, y: -4.46, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 719108481}
@@ -3500,7 +3500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32d1302895f65b9438ca3d202f769674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageToGive: 3
+  damageToGive: 2
 --- !u!114 &651191434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3656,9 +3656,9 @@ MonoBehaviour:
     sentences:
     - '...'
     - Finally, you have arrived.
-    - 'Who ARE you?
+    - 'Who ARE you? Why are you
 
-      Why are you destroying everything?'
+      destroying everything?'
     - Poor, innocent fool...
     - 'It doesn''t matter why...
 
@@ -58803,7 +58803,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1792799643}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 86.89, y: -32.04, z: 0}
+  m_LocalPosition: {x: 0.4, y: -4.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2065105164}
