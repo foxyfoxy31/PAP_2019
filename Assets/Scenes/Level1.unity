@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -5401,9 +5401,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2402a432abd59db42b8eb789aee6dba4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 68d7471b04a018a459b06c145b08b427, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.463
+  m_Volume: 0.499
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -59784,7 +59784,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicManager: {fileID: 0}
   song: {fileID: 8300000, guid: 253cccdee4cde484f80a2c306bd7edeb, type: 3}
-  pitch: 1.1
+  pitch: 1
 --- !u!114 &1996747231
 MonoBehaviour:
   m_ObjectHideFlags: 0
