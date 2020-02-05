@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -59783,7 +59783,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicManager: {fileID: 0}
-  song: {fileID: 8300000, guid: 11b71e94ecab53e4f9c43e371c87a99b, type: 3}
+  song: {fileID: 8300000, guid: 253cccdee4cde484f80a2c306bd7edeb, type: 3}
   pitch: 1.1
 --- !u!114 &1996747231
 MonoBehaviour:

@@ -101,6 +101,7 @@ public class DialogueManager : MonoBehaviour
         int i = 0;
         foreach (char letter in sentence.ToCharArray()) {
             dialogueText.text += letter;
+            yield return new WaitForSeconds(0.01f);
             if (i==0) {
                 i++;
                 letterSound.Play();

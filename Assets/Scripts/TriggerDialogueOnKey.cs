@@ -23,14 +23,14 @@ public class TriggerDialogueOnKey : MonoBehaviour
 
     IEnumerator dialogueKey() {
         CR_running = true;
-        if(Input.GetKeyDown("m") && !dialogueTriggered) {
+        if(Input.GetKey("m") && !dialogueTriggered) {
             gameObject.GetComponent<DialogueTrigger>().TriggerDialogue(playerleft, animation, talkPoint);
             dialogueTriggered = true;
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.7f);
         }
-        else if (Input.GetKeyDown("m") && dialogueTriggered) {
+        else if (Input.GetKey("m") && dialogueTriggered) {
             FindObjectOfType<DialogueManager>().DisplayNextSentence();
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.7f);
         }
         else if (FindObjectOfType<PlayerController2D>().lockControls == false) {
             dialogueTriggered = false;
