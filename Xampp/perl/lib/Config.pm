@@ -83,7 +83,7 @@ sub AUTOLOAD {
 
 # tie returns the object, so the value returned to require will be true.
 tie %Config, 'Config', {
-    archlibexp => '\\xampp\\perl\\lib',
+    archlibexp => '\\Users\\Foxy\\Documents\\GitHub\\PAP_2019\\xampp\\perl\\lib',
     archname => 'MSWin32-x64-multi-thread',
     cc => 'gcc',
     d_readlink => undef,
@@ -95,14 +95,14 @@ tie %Config, 'Config', {
     inc_version_list => '',
     intsize => '4',
     ldlibpthname => '',
-    libpth => '\\xampp\\c\\lib \\xampp\\c\\x86_64-w64-mingw32\\lib',
+    libpth => '\\Users\\Foxy\\Documents\\GitHub\\PAP_2019\\xampp\\c\\lib \\xampp\\c\\x86_64-w64-mingw32\\lib',
     osname => 'MSWin32',
     osvers => '4.0',
     path_sep => ';',
-    privlibexp => '\\xampp\\perl\\lib',
-    scriptdir => '\\xampp\\perl\\bin',
-    sitearchexp => '\\xampp\\perl\\site\\lib',
-    sitelibexp => '\\xampp\\perl\\site\\lib',
+    privlibexp => '\\Users\\Foxy\\Documents\\GitHub\\PAP_2019\\xampp\\perl\\lib',
+    scriptdir => '\\Users\\Foxy\\Documents\\GitHub\\PAP_2019\\xampp\\perl\\bin',
+    sitearchexp => '\\Users\\Foxy\\Documents\\GitHub\\PAP_2019\\xampp\\perl\\site\\lib',
+    sitelibexp => '\\Users\\Foxy\\Documents\\GitHub\\PAP_2019\\xampp\\perl\\site\\lib',
     so => 'dll',
     useithreads => 'define',
     usevendorprefix => 'define',
