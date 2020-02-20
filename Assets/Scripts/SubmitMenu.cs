@@ -2,15 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class SubmitMenu : MonoBehaviour
 {
     
     public InputField playerNameField;
+    public TextMeshProUGUI timerText;
+
+    public TimeStorage timeStorage;
 
     public float levelTimer;
     public Button submitButton;
 
+
+    private void Start() {
+        timeStorage = FindObjectOfType<TimeStorage>();
+        levelTimer = timeStorage.getLevelTimer();
+        string minutes = ((int) levelTimer / 60).ToString();
+        string seconds = (levelTimer % 60).ToString("f0");
+
+        timerText.text = minutes + " minutes and " + seconds + " seconds";
+    }
 
     public void CallRegister() {
         StartCoroutine(Register());

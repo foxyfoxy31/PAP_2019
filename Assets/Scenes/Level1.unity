@@ -6059,6 +6059,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1227249354}
   - component: {fileID: 1227249355}
+  - component: {fileID: 1227249356}
   m_Layer: 0
   m_Name: TimerManager
   m_TagString: Untagged
@@ -6094,6 +6095,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 696198553}
   startTime: 0
+  timeStorage: {fileID: 0}
+--- !u!114 &1227249356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227249353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d57d72b2c4f97148b297104292e335d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1255814660
 PrefabInstance:
   m_ObjectHideFlags: 0

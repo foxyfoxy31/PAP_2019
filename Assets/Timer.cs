@@ -10,10 +10,13 @@ public class Timer : MonoBehaviour
     public float startTime;
     private bool finished = false;
 
+    public TimeStorage timeStorage;
+
 
     void Start()
     {
         startTime = Time.time;
+        timeStorage = FindObjectOfType<TimeStorage>();
     }
 
     // Update is called once per frame
@@ -29,6 +32,8 @@ public class Timer : MonoBehaviour
             string seconds = (t % 60).ToString("f2");
 
             timerText.text = minutes + ":" + seconds;
+
+            timeStorage.setLevelTimer(t);
         }
     }
 
