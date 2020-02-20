@@ -4,6 +4,10 @@
 [Bb]uild/
 [Bb]uilds/
 Assets/AssetStoreTools*
+[Xx]ampp/apache/logs
+[Xx]ampp/tmp
+[Xx]ampp/phpMyAdmin/tmp/
+
 
 # Visual Studio cache directory
 .vs/
