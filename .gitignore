@@ -36,3 +36,4 @@ sysinfo.txt
 *.unitypackage
 Assets/Plugins.meta
 Assets/Tile Assets.meta
+*.log
