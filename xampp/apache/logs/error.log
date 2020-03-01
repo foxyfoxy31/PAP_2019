@@ -33,3 +33,41 @@ PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_sqlite' (tried: \
 [Thu Feb 20 14:44:07.006187 2020] [ssl:warn] [pid 5392:tid 560] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
 PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_sqlite' (tried: \\Users\\Foxy\\Documents\\GitHub\\PAP_2019\\xampp\\php\\ext\\pdo_sqlite (Imposs\xc3\xadvel localizar o m\xc3\xb3dulo especificado.), \\Users\\Foxy\\Documents\\GitHub\\PAP_2019\\xampp\\php\\ext\\php_pdo_sqlite.dll (Imposs\xc3\xadvel localizar o m\xc3\xb3dulo especificado.)) in Unknown on line 0
 [Thu Feb 20 14:44:07.056743 2020] [mpm_winnt:notice] [pid 5392:tid 560] AH00354: Child: Starting 150 worker threads.
+[Fri Feb 21 08:52:06.926312 2020] [ssl:warn] [pid 19436:tid 636] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Fri Feb 21 08:52:07.011175 2020] [core:warn] [pid 19436:tid 636] AH00098: pid file C:/Users/Foxy/Documents/GitHub/PAP_2019/xampp/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Fri Feb 21 08:52:07.013487 2020] [ssl:warn] [pid 19436:tid 636] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_sqlite' (tried: \\Users\\Foxy\\Documents\\GitHub\\PAP_2019\\xampp\\php\\ext\\pdo_sqlite (Imposs\xc3\xadvel localizar o m\xc3\xb3dulo especificado.), \\Users\\Foxy\\Documents\\GitHub\\PAP_2019\\xampp\\php\\ext\\php_pdo_sqlite.dll (Imposs\xc3\xadvel localizar o m\xc3\xb3dulo especificado.)) in Unknown on line 0
+[Fri Feb 21 08:52:07.217601 2020] [mpm_winnt:notice] [pid 19436:tid 636] AH00455: Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2 configured -- resuming normal operations
+[Fri Feb 21 08:52:07.218650 2020] [mpm_winnt:notice] [pid 19436:tid 636] AH00456: Apache Lounge VC15 Server built: Aug 11 2019 12:20:04
+[Fri Feb 21 08:52:07.218650 2020] [core:notice] [pid 19436:tid 636] AH00094: Command line: 'c:\\users\\foxy\\documents\\github\\pap_2019\\xampp\\apache\\bin\\httpd.exe -d C:/Users/Foxy/Documents/GitHub/PAP_2019/xampp/apache'
+[Fri Feb 21 08:52:07.227839 2020] [mpm_winnt:notice] [pid 19436:tid 636] AH00418: Parent: Created child process 16680
+[Fri Feb 21 08:52:08.475318 2020] [ssl:warn] [pid 16680:tid 644] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Fri Feb 21 08:52:08.576323 2020] [ssl:warn] [pid 16680:tid 644] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_sqlite' (tried: \\Users\\Foxy\\Documents\\GitHub\\PAP_2019\\xampp\\php\\ext\\pdo_sqlite (Imposs\xc3\xadvel localizar o m\xc3\xb3dulo especificado.), \\Users\\Foxy\\Documents\\GitHub\\PAP_2019\\xampp\\php\\ext\\php_pdo_sqlite.dll (Imposs\xc3\xadvel localizar o m\xc3\xb3dulo especificado.)) in Unknown on line 0
+[Fri Feb 21 08:52:08.624981 2020] [mpm_winnt:notice] [pid 16680:tid 644] AH00354: Child: Starting 150 worker threads.
+[Thu Feb 27 09:24:09.337868 2020] [ssl:warn] [pid 4960:tid 556] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Feb 27 09:24:09.426630 2020] [core:warn] [pid 4960:tid 556] AH00098: pid file C:/Users/Foxy/Documents/GitHub/PAP_2019/xampp/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Thu Feb 27 09:24:09.430620 2020] [ssl:warn] [pid 4960:tid 556] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_sqlite' (tried: \\Users\\Foxy\\Documents\\GitHub\\PAP_2019\\xampp\\php\\ext\\pdo_sqlite (Imposs\xc3\xadvel localizar o m\xc3\xb3dulo especificado.), \\Users\\Foxy\\Documents\\GitHub\\PAP_2019\\xampp\\php\\ext\\php_pdo_sqlite.dll (Imposs\xc3\xadvel localizar o m\xc3\xb3dulo especificado.)) in Unknown on line 0
+[Thu Feb 27 09:24:09.679578 2020] [mpm_winnt:notice] [pid 4960:tid 556] AH00455: Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2 configured -- resuming normal operations
+[Thu Feb 27 09:24:09.680575 2020] [mpm_winnt:notice] [pid 4960:tid 556] AH00456: Apache Lounge VC15 Server built: Aug 11 2019 12:20:04
+[Thu Feb 27 09:24:09.680575 2020] [core:notice] [pid 4960:tid 556] AH00094: Command line: 'apache\\bin\\httpd.exe -d C:/Users/Foxy/Documents/GitHub/PAP_2019/xampp/apache -f conf\\httpd.conf'
+[Thu Feb 27 09:24:09.691547 2020] [mpm_winnt:notice] [pid 4960:tid 556] AH00418: Parent: Created child process 18368
+[Thu Feb 27 09:24:12.051158 2020] [ssl:warn] [pid 18368:tid 832] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Feb 27 09:24:12.337439 2020] [ssl:warn] [pid 18368:tid 832] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_sqlite' (tried: \\Users\\Foxy\\Documents\\GitHub\\PAP_2019\\xampp\\php\\ext\\pdo_sqlite (Imposs\xc3\xadvel localizar o m\xc3\xb3dulo especificado.), \\Users\\Foxy\\Documents\\GitHub\\PAP_2019\\xampp\\php\\ext\\php_pdo_sqlite.dll (Imposs\xc3\xadvel localizar o m\xc3\xb3dulo especificado.)) in Unknown on line 0
+[Thu Feb 27 09:24:12.518976 2020] [mpm_winnt:notice] [pid 18368:tid 832] AH00354: Child: Starting 150 worker threads.
+[Thu Feb 27 09:24:14.413434 2020] [mpm_winnt:notice] [pid 4960:tid 556] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Thu Feb 27 09:24:16.417627 2020] [mpm_winnt:notice] [pid 18368:tid 832] AH00364: Child: All worker threads have exited.
+[Thu Feb 27 09:24:16.482521 2020] [mpm_winnt:notice] [pid 4960:tid 556] AH00430: Parent: Child process 18368 exited successfully.
+[Thu Feb 27 09:26:28.631418 2020] [ssl:warn] [pid 10784:tid 616] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Feb 27 09:26:28.712497 2020] [ssl:warn] [pid 10784:tid 616] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_sqlite' (tried: \\Users\\Foxy\\Documents\\GitHub\\PAP_2019\\xampp\\php\\ext\\pdo_sqlite (Imposs\xc3\xadvel localizar o m\xc3\xb3dulo especificado.), \\Users\\Foxy\\Documents\\GitHub\\PAP_2019\\xampp\\php\\ext\\php_pdo_sqlite.dll (Imposs\xc3\xadvel localizar o m\xc3\xb3dulo especificado.)) in Unknown on line 0
+[Thu Feb 27 09:26:28.751960 2020] [mpm_winnt:notice] [pid 10784:tid 616] AH00455: Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2 configured -- resuming normal operations
+[Thu Feb 27 09:26:28.751960 2020] [mpm_winnt:notice] [pid 10784:tid 616] AH00456: Apache Lounge VC15 Server built: Aug 11 2019 12:20:04
+[Thu Feb 27 09:26:28.751960 2020] [core:notice] [pid 10784:tid 616] AH00094: Command line: 'c:\\users\\foxy\\documents\\github\\pap_2019\\xampp\\apache\\bin\\httpd.exe -d C:/Users/Foxy/Documents/GitHub/PAP_2019/xampp/apache'
+[Thu Feb 27 09:26:28.758939 2020] [mpm_winnt:notice] [pid 10784:tid 616] AH00418: Parent: Created child process 9268
+[Thu Feb 27 09:26:29.642666 2020] [ssl:warn] [pid 9268:tid 780] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Feb 27 09:26:29.718465 2020] [ssl:warn] [pid 9268:tid 780] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_sqlite' (tried: \\Users\\Foxy\\Documents\\GitHub\\PAP_2019\\xampp\\php\\ext\\pdo_sqlite (Imposs\xc3\xadvel localizar o m\xc3\xb3dulo especificado.), \\Users\\Foxy\\Documents\\GitHub\\PAP_2019\\xampp\\php\\ext\\php_pdo_sqlite.dll (Imposs\xc3\xadvel localizar o m\xc3\xb3dulo especificado.)) in Unknown on line 0
+[Thu Feb 27 09:26:29.764343 2020] [mpm_winnt:notice] [pid 9268:tid 780] AH00354: Child: Starting 150 worker threads.
