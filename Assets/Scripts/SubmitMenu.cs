@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class SubmitMenu : MonoBehaviour
 {
@@ -38,6 +39,7 @@ public class SubmitMenu : MonoBehaviour
         yield return www;
         if (www.text == "0") {
             Debug.Log("Player succesfully registered in the leaderboard.");
+            SceneManager.LoadScene("Leaderboard");
         }
         else {
             Debug.Log("Player registration failed. Error #" + www.text);
