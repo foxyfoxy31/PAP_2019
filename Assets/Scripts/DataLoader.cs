@@ -21,6 +21,7 @@ public class DataLoader : MonoBehaviour
     public string GetDataValue(string data, string index) {
         string value = data.Substring(data.IndexOf(index)+index.Length);
         if (value.Contains("|")) value = value.Remove(value.IndexOf("|"));
+        if (value.Contains(".")) value = value.Replace(".", ",");
         return value;
     }
 

@@ -107,3 +107,13 @@ PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_sqlite' (tried: \
 [Wed Mar 04 12:14:55.169751 2020] [ssl:warn] [pid 3704:tid 640] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
 PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_sqlite' (tried: \\Users\\Foxy\\Documents\\GitHub\\PAP_2019\\xampp\\php\\ext\\pdo_sqlite (Imposs\xc3\xadvel localizar o m\xc3\xb3dulo especificado.), \\Users\\Foxy\\Documents\\GitHub\\PAP_2019\\xampp\\php\\ext\\php_pdo_sqlite.dll (Imposs\xc3\xadvel localizar o m\xc3\xb3dulo especificado.)) in Unknown on line 0
 [Wed Mar 04 12:14:55.208717 2020] [mpm_winnt:notice] [pid 3704:tid 640] AH00354: Child: Starting 150 worker threads.
+[Wed Mar 04 15:12:37.751270 2020] [ssl:warn] [pid 14664:tid 632] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_sqlite' (tried: \\Users\\Foxy\\Documents\\GitHub\\PAP_2019\\xampp\\php\\ext\\pdo_sqlite (Imposs\xc3\xadvel localizar o m\xc3\xb3dulo especificado.), \\Users\\Foxy\\Documents\\GitHub\\PAP_2019\\xampp\\php\\ext\\php_pdo_sqlite.dll (Imposs\xc3\xadvel localizar o m\xc3\xb3dulo especificado.)) in Unknown on line 0
+[Wed Mar 04 15:12:37.789356 2020] [mpm_winnt:notice] [pid 14664:tid 632] AH00455: Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2 configured -- resuming normal operations
+[Wed Mar 04 15:12:37.789356 2020] [mpm_winnt:notice] [pid 14664:tid 632] AH00456: Apache Lounge VC15 Server built: Aug 11 2019 12:20:04
+[Wed Mar 04 15:12:37.789356 2020] [core:notice] [pid 14664:tid 632] AH00094: Command line: 'c:\\users\\foxy\\documents\\github\\pap_2019\\xampp\\apache\\bin\\httpd.exe -d C:/Users/Foxy/Documents/GitHub/PAP_2019/xampp/apache'
+[Wed Mar 04 15:12:38.167021 2020] [mpm_winnt:notice] [pid 14664:tid 632] AH00418: Parent: Created child process 13452
+[Wed Mar 04 15:12:38.752412 2020] [ssl:warn] [pid 13452:tid 644] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Mar 04 15:12:38.808731 2020] [ssl:warn] [pid 13452:tid 644] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_sqlite' (tried: \\Users\\Foxy\\Documents\\GitHub\\PAP_2019\\xampp\\php\\ext\\pdo_sqlite (Imposs\xc3\xadvel localizar o m\xc3\xb3dulo especificado.), \\Users\\Foxy\\Documents\\GitHub\\PAP_2019\\xampp\\php\\ext\\php_pdo_sqlite.dll (Imposs\xc3\xadvel localizar o m\xc3\xb3dulo especificado.)) in Unknown on line 0
+[Wed Mar 04 15:12:38.842115 2020] [mpm_winnt:notice] [pid 13452:tid 644] AH00354: Child: Starting 150 worker threads.

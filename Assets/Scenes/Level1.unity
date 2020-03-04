@@ -2772,7 +2772,7 @@ GameObject:
   - component: {fileID: 563866414}
   - component: {fileID: 563866413}
   - component: {fileID: 563866412}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: tutorial_talk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4878,7 +4878,7 @@ GameObject:
   - component: {fileID: 919178983}
   - component: {fileID: 919178984}
   - component: {fileID: 919178980}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: StartingDialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5279,7 +5279,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 983383055}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}

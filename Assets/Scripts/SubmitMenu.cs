@@ -34,7 +34,7 @@ public class SubmitMenu : MonoBehaviour
     IEnumerator Register () {
         WWWForm form = new WWWForm();
         form.AddField("playerName", playerNameField.text);
-        form.AddField("levelTime", levelTimer.ToString());
+        form.AddField("levelTime", levelTimer.ToString().Replace(",", "."));
         WWW www = new WWW("http://localhost/sqlconnect/register.php", form);
         yield return www;
         if (www.text == "0") {
