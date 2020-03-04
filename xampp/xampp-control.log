@@ -372,3 +372,57 @@
 11:15:08  [main] 	Deinitializing Modules
 11:15:08  [main] 	Deinitializing Control Panel
 
+12:37:15  [main] 	Initializing Control Panel
+12:37:15  [main] 	Windows Version:  Enterprise  64-bit
+12:37:15  [main] 	XAMPP Version: 7.4.2
+12:37:15  [main] 	Control Panel Version: 3.2.4  [ Compiled: Jun 5th 2019 ]
+12:37:15  [main] 	You are not running with administrator rights! This will work for
+12:37:15  [main] 	most application stuff but whenever you do something with services
+12:37:15  [main] 	there will be a security dialogue or things will break! So think 
+12:37:15  [main] 	about running this application with administrator rights!
+12:37:15  [main] 	XAMPP Installation Directory: "c:\users\foxy\documents\github\pap_2019\xampp\"
+12:37:15  [main] 	Checking for prerequisites
+12:37:16  [main] 	All prerequisites found
+12:37:16  [main] 	Initializing Modules
+12:37:16  [main] 	The FileZilla module is disabled
+12:37:16  [main] 	The Mercury module is disabled
+12:37:16  [main] 	Enabling autostart for module "Apache"
+12:37:16  [main] 	Enabling autostart for module "MySQL"
+12:37:16  [main] 	Starting Check-Timer
+12:37:16  [main] 	Control Panel Ready
+12:37:16  [Apache] 	Autostart active: starting...
+12:37:16  [Apache] 	Attempting to start Apache app...
+12:37:16  [mysql] 	Autostart active: starting...
+12:37:16  [mysql] 	Attempting to start MySQL app...
+12:37:17  [Apache] 	Status change detected: running
+12:37:17  [mysql] 	Status change detected: running
+13:12:06  [main] 	Deinitializing Modules
+13:12:06  [main] 	Deinitializing Control Panel
+
+14:01:01  [main] 	Initializing Control Panel
+14:01:01  [main] 	Windows Version:  Enterprise  64-bit
+14:01:01  [main] 	XAMPP Version: 7.4.2
+14:01:01  [main] 	Control Panel Version: 3.2.4  [ Compiled: Jun 5th 2019 ]
+14:01:01  [main] 	You are not running with administrator rights! This will work for
+14:01:01  [main] 	most application stuff but whenever you do something with services
+14:01:01  [main] 	there will be a security dialogue or things will break! So think 
+14:01:01  [main] 	about running this application with administrator rights!
+14:01:01  [main] 	XAMPP Installation Directory: "c:\users\foxy\documents\github\pap_2019\xampp\"
+14:01:01  [main] 	Checking for prerequisites
+14:01:01  [main] 	All prerequisites found
+14:01:01  [main] 	Initializing Modules
+14:01:01  [main] 	The FileZilla module is disabled
+14:01:01  [main] 	The Mercury module is disabled
+14:01:01  [main] 	Enabling autostart for module "Apache"
+14:01:01  [main] 	Enabling autostart for module "MySQL"
+14:01:01  [main] 	Starting Check-Timer
+14:01:01  [main] 	Control Panel Ready
+14:01:02  [Apache] 	Autostart active: starting...
+14:01:02  [Apache] 	Attempting to start Apache app...
+14:01:02  [mysql] 	Autostart active: starting...
+14:01:02  [mysql] 	Attempting to start MySQL app...
+14:01:02  [Apache] 	Status change detected: running
+14:01:02  [mysql] 	Status change detected: running
+15:19:03  [main] 	Deinitializing Modules
+15:19:03  [main] 	Deinitializing Control Panel
+
