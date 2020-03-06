@@ -14,6 +14,18 @@ TextureImporter:
   - first:
       213: 1939486170267917636
     second: tutorial_talk
+  - first:
+      213: 1293273843894632139
+    second: tutorial_doublejump
+  - first:
+      213: 2805568737498354061
+    second: tutorial_dash
+  - first:
+      213: 2320548670741630886
+    second: tutorial_sword
+  - first:
+      213: 2846959405174728764
+    second: tutorial_arrow
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -169,7 +181,7 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -177,6 +189,90 @@ TextureImporter:
       bones: []
       spriteID: 6e8311bd6f4cbbe4db6ebc120930fc54
       internalID: 1939486170267917636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tutorial_doublejump
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 432
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61299869d7622d740a8a9939f90458f0
+      internalID: 1293273843894632139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tutorial_dash
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 432
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7b5f78f24d4ef847b9dd3c41cba0045
+      internalID: 2805568737498354061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tutorial_sword
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 432
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d7fbbb5e261a2148a6b44f7ff905218
+      internalID: 2320548670741630886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tutorial_arrow
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 432
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae93770db4ea38a4db355d0bf6283ea0
+      internalID: 2846959405174728764
       vertices: []
       indices: 
       edges: []
